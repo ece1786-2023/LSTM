@@ -1,0 +1,4 @@
+this folder is where the trained models and the models in training/state dictionaries are stored/loaded from.
+
+model naming: basemodel_version.ext
+e.g. gpt2_v1.0_unfinished.m
