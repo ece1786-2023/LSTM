@@ -1,1 +1,1 @@
-This folder holds the raw data xml files that is to be processed.
+This folder holds the folders that holds raw data xml files that is to be processed.
