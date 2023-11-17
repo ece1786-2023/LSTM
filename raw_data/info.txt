@@ -1,1 +1,0 @@
-This folder holds the raw data xml files that is to be processed.
