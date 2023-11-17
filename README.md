@@ -1,11 +1,11 @@
 # LSTM
 
-# commands
+# git commands
 git init	#initialize
 
-git clone https://github.com/ece1786-2023/LSTM
+#git clone https://github.com/ece1786-2023/LSTM
 
-git fetch origin
+#git fetch origin
 
 git pull origin <branch_name> #sync with github
 
@@ -19,6 +19,6 @@ git remote add origin https://github.com/ece1786-2023/LSTM
 
 git branch	#check your current branch
 
-git branch -M branchname
+git branch -M branchname #creates new branch
 
-git push -u origin <branch_name>
+git push -u origin branchname #push to new branch #do not push to main!!!
