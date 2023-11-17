@@ -7,7 +7,9 @@ git init	#initialize
 
 #git fetch origin
 
-git pull origin <branch_name> #sync with github
+git reset --hard origin/<branch_name> #This command will set your local branch to exactly match the state of the remote branch. **Be cautious when using --hard as it discards all local changes.**
+
+git pull origin <branch_name> #pulls new commits from github
 
 git status	#check new/modified/untracked files
 
@@ -21,7 +23,7 @@ git branch	#check your current branch
 
 git branch -M branchname #creates new branch
 
-git push -u origin branchname #push to new branch #do not push to main!!!
+git push -u origin branchname #push to new branch #**do not push to main!!!**
 
 
 # version control 
