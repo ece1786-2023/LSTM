@@ -22,3 +22,11 @@ git branch	#check your current branch
 git branch -M branchname #creates new branch
 
 git push -u origin branchname #push to new branch #do not push to main!!!
+
+
+# version control 
+branch naming: NMMDD_HHMM_name
+
+N=name
+
+# repo structure
