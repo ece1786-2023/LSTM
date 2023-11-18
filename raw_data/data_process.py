@@ -7,4 +7,4 @@
 @Date   ：2023/11/18 0:43
 **************************************************
 '''
- # extract raw xml data
+# extract raw xml data to construct the sentence template
