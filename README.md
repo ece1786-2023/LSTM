@@ -5,9 +5,9 @@ git init	#initialize
 
 #git clone https://github.com/ece1786-2023/LSTM
 
-#git fetch origin
+#git fetch origin/main #This command fetches the latest main branch from the repo
 
-git reset --hard origin/<branch_name> #This command will set your local branch to exactly match the state of the remote branch. **Be cautious when using --hard as it discards all local changes.**
+git reset --hard origin/main #This command will set your local branch to exactly match the state of the **fetched** remote branch. **Be cautious when using --hard as it discards all local changes.**
 
 git pull origin <branch_name> #pulls new commits from github
 
