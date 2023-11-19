@@ -11,6 +11,7 @@
 import xml.dom.minidom
 import csv
 import os
+import pandas as pd
 
 
 def get_file_name(file_path):
@@ -51,11 +52,15 @@ if __name__ == '__main__':
     file_names = get_file_name(file_path)
     for file_name in file_names:
         xml_path = 'basegame/'+file_name
-        # print(xml_path)
         read_xml(xml_path, data)
-        # data.append(data_ls)
     print(len(data))
-    with open('backstory.csv', 'w') as file:
-        writer = csv.writer(file)
-        writer.writerow(csv_head)
-        writer.writerows(data)
+    df = pd.DataFrame(data)
+    df.columns = csv_head
+    ########### Save as cpkl ##################
+    df.to_pickle('backstory.pkl')
+
+    ########### Save as csv ##################
+    # with open('backstory.csv', 'w') as file:
+    #     writer = csv.writer(file)
+    #     writer.writerow(csv_head)
+    #     writer.writerows(data)
