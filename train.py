@@ -127,23 +127,24 @@ for epoch in range(epochs):
     total_loss_test = 0
 
     progress_bar = tqdm(dataloader_train, desc=f"Epoch {epoch + 1}/{epochs}")
-    for batch in progress_bar:
-        # Move batch to device
-        batch = {"input_ids": batch[0], "attention_mask": batch[1]}
-        # batch = {key: value[0].to(device) for key, value in batch.items()}
 
-        # Forward pass
-        outputs = model(**batch, labels=batch["input_ids"])
-        loss = outputs.loss
-
-        # Backward pass and optimization
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-
-        total_loss_train += loss.item()
-        # Update progress bar
-        progress_bar.set_postfix({"Loss": total_loss_train / dataloader_train_len})
+    # for batch in progress_bar:
+    #     # Move batch to device
+    #     batch = {"input_ids": batch[0], "attention_mask": batch[1]}
+    #     # batch = {key: value[0].to(device) for key, value in batch.items()}
+    #
+    #     # Forward pass
+    #     outputs = model(**batch, labels=batch["input_ids"])
+    #     loss = outputs.loss
+    #
+    #     # Backward pass and optimization
+    #     optimizer.zero_grad()
+    #     loss.backward()
+    #     optimizer.step()
+    #
+    #     total_loss_train += loss.item()
+    #     # Update progress bar
+    #     progress_bar.set_postfix({"Loss": total_loss_train / dataloader_train_len})
 
     for batch_idx, batch in enumerate(dataloader_test, 1):
         # Move batch to device
@@ -172,5 +173,5 @@ splot.legend()
 fig.show()
 splot.title.set_text("Loss over time")
 
-model.save_pretrained(model_name_save)
-tokenizer.save_pretrained(model_name_save)
+# model.save_pretrained(model_name_save)
+# tokenizer.save_pretrained(model_name_save)

@@ -27,30 +27,33 @@ model_path = "models/ft1"
 print("using device " + str(device))
 num_output = 50  # number of output desired
 
-tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
-model = AutoModelForCausalLM.from_pretrained(model_path, local_files_only=True).to(device)
-# tokenizer = AutoTokenizer.from_pretrained('gpt2-large')
-# model = AutoModelForCausalLM.from_pretrained('gpt2-large').to(device)
+# tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
+# model = AutoModelForCausalLM.from_pretrained(model_path, local_files_only=True).to(device)
+tokenizer = AutoTokenizer.from_pretrained('gpt2')
+model = AutoModelForCausalLM.from_pretrained('gpt2').to(device)
 
+ids_ls = []
 for title_test in titles_test:
-    prompt = "This is the story of [PAWN_nameDef], a" + title_test + ":"
+    prompt = "This is the story of [PAWN_nameDef], a " + title_test + ":"
     input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
+    ids_ls.append(input_ids)
 
 print(input_ids.get_device())
 
 # sample up to 30 tokens
-# torch.manual_seed(11)
 list_out = []
 sentence_out = []
+total_loss_test = 0
 # ['Today I believe we can finally get rid of discrimination," said Rep. Mark Pocan (D-Wis.).\n\n"Just look at the']
 for i in range(num_output):
-    outputs = model.generate(input_ids, do_sample=True, max_length=70, temperature=1, top_p=1,
+    outputs = model.generate(ids_ls[i], do_sample=True, max_length=70, temperature=1, top_p=1,
                              repetition_penalty=1)
     # TODO output length
     list_out.append(outputs)
+loss = total_loss_test/50
 
 for i in range(num_output):
     generate_sentence = tokenizer.batch_decode(list_out[i], skip_special_tokens=True)
     sentence_out.append(generate_sentence)
 df = pd.DataFrame(sentence_out)
-df.to_pickle('models/Story_generate/ft1_50_70.pkl')
+df.to_pickle('models/Story_generate/gpt2_50_70.pkl')
