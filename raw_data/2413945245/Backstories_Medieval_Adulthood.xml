@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Medieval merchant -->
+    <BackstoryDef>
+        <defName>VFEMA001</defName>
+        <slot>Adulthood</slot>
+        <title>Medieval merchant</title>
+        <titleShort>Merchant</titleShort>
+        <baseDesc>[PAWN_nameDef] travelled far and wide on a medieval world, peddling many goods and getting into [PAWN_possessive] fair share of trouble. [PAWN_possessive] lifestyle kept [PAWN_objective] in good physical condition, though [PAWN_pronoun] wouldn't appreciate doing most menial labour.</baseDesc>
+        <requiredWorkTags>
+            <li>Social</li>
+        </requiredWorkTags>
+        <skillGains>
+            <li>
+                <key>Social</key>
+                <value>6</value>
+            </li>
+            <li>
+                <key>Melee</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Plants</key>
+                <value>-2</value>
+            </li>
+            <li>
+                <key>Mining</key>
+                <value>-2</value>
+            </li>
+        </skillGains>
+        <workDisables>
+            <li>ManualDumb</li>
+        </workDisables>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Medieval herald -->
+    <BackstoryDef>
+        <defName>VFEMA002</defName>
+        <slot>Adulthood</slot>
+        <title>Medieval herald</title>
+        <titleShort>Herald</titleShort>
+        <baseDesc>[PAWN_nameDef] was a herald for a medieval kingdom, travelling the kingdom to announce the latest decrees issued by [PAWN_possessive] king wherever it was required while also being trained in the art of medieval warfare to fend for [PAWN_objective]self. [PAWN_pronoun] learnt to tend to himself while out on the road [PAWN_pronoun] travelled.</baseDesc>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <skillGains>
+            <li>
+                <key>Melee</key>
+                <value>4</value>
+            </li>
+            <li>
+                <key>Social</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Medicine</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Intellectual</key>
+                <value>-4</value>
+            </li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Medieval paladin -->
+    <BackstoryDef>
+        <defName>VFEMA003</defName>
+        <slot>Adulthood</slot>
+        <title>Medieval paladin</title>
+        <titleShort>Paladin</titleShort>
+        <baseDesc>[PAWN_nameDef] was an anointed knight of the hexagonal table alongside the mythical king Barthur. [PAWN_pronoun] lost track of [PAWN_possessive] companions and king when [PAWN_pronoun] was knocked out on the battlefield and woke up on a different planet.</baseDesc>
+        <bodyTypeGlobal>Hulk</bodyTypeGlobal>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <skillGains>
+            <li>
+                <key>Melee</key>
+                <value>4</value>
+            </li>
+            <li>
+                <key>Medicine</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Animals</key>
+                <value>2</value>
+            </li>
+        </skillGains>
+        <workDisables>
+            <li>ManualDumb</li>
+            <li>PlantWork</li>
+            <li>Intellectual</li>
+        </workDisables>
+        <spawnCategories>
+            <li>Medieval</li>
+            <li>Rare</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Idle knight -->
+    <BackstoryDef>
+        <defName>VFEMA004</defName>
+        <slot>Adulthood</slot>
+        <title>Idle knight</title>
+        <titleShort>Knight</titleShort>
+        <baseDesc>[PAWN_nameDef] was born to a long line of noble knights and was expected to continue this legacy. Despite eventually receiving [PAWN_possessive] knighthood, [PAWN_nameDef] has always been more interested in more idle and esoteric pursuits.</baseDesc>
+        <bodyTypeGlobal>Fat</bodyTypeGlobal>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <skillGains>
+            <li>
+                <key>Intellectual</key>
+                <value>4</value>
+            </li>
+            <li>
+                <key>Artistic</key>
+                <value>4</value>
+            </li>
+            <li>
+                <key>Medicine</key>
+                <value>3</value>
+            </li>
+        </skillGains>
+        <workDisables>
+            <li>ManualDumb</li>
+            <li>ManualSkilled</li>
+        </workDisables>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Drunken monk -->
+    <BackstoryDef>
+        <defName>VFEMA005</defName>
+        <slot>Adulthood</slot>
+        <title>Drunken monk</title>
+        <titleShort>Monk</titleShort>
+        <baseDesc>[PAWN_nameDef] was a monk responsible for the production of the high-quality wine vintage [PAWN_possessive] monastery was known for. Despite [PAWN_possessive] vows, [PAWN_nameDef] partook in the fruits of [PAWN_possessive] labor more often than not.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Plants</key>
+                <value>3</value>
+            </li>
+            <li>
+                <key>Cooking</key>
+                <value>3</value>
+            </li>
+            <li>
+                <key>Artistic</key>
+                <value>1</value>
+            </li>
+        </skillGains>
+        <workDisables>
+            <li>Violent</li>
+        </workDisables>
+        <forcedTraits>
+            <DrugDesire>1</DrugDesire>
+        </forcedTraits>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Guild Craftsman -->
+    <BackstoryDef>
+        <defName>VFEMA006</defName>
+        <slot>Adulthood</slot>
+        <title>Guild craftsman</title>
+        <titleShort>Craftsman</titleShort>
+        <baseDesc>[PAWN_nameDef] was a member of one of the greatest craftsmen guilds of the realm. Unfortunately [PAWN_pronoun] was caught debasing silver currency and pocketing the raw material, and was promptly expelled from the guild and banished.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Crafting</key>
+                <value>3</value>
+            </li>
+            <li>
+                <key>Construction</key>
+                <value>3</value>
+            </li>
+        </skillGains>
+        <workDisables>
+            <li>Social</li>
+        </workDisables>
+        <forcedTraits>
+            <Greedy>0</Greedy>
+        </forcedTraits>
+        <spawnCategories>
+            <li>Medieval</li>
+            <li>Uncommon</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Disgraced grandmaster -->
+    <BackstoryDef>
+        <defName>VFEMA007</defName>
+        <slot>Adulthood</slot>
+        <title>Disgraced grandmaster</title>
+        <titleShort>Grandmaster</titleShort>
+        <baseDesc>[PAWN_nameDef] was the founder and leader of an order of knights tasked with exterminating the heathen tribals on the outskirts of the kingdom. An ambush in the dead of night while on a major campaign wiped out most of [PAWN_possessive] order and [PAWN_pronoun] was never seen again.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Melee</key>
+                <value>4</value>
+            </li>
+            <li>
+                <key>Social</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Shooting</key>
+                <value>-2</value>
+            </li>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <spawnCategories>
+            <li>Medieval</li>
+            <li>Uncommon</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Hunter -->
+    <BackstoryDef>
+        <defName>VFEMA008</defName>
+        <slot>Adulthood</slot>
+        <title>Hunter</title>
+        <titleFemale>Huntress</titleFemale>
+        <titleShort>Hunter</titleShort>
+        <titleShortFemale>Huntress</titleShortFemale>
+        <baseDesc>[PAWN_nameDef] made a living by hunting big game. Though most of [PAWN_possessive] kills were sold to commonfolk, [PAWN_pronoun] did occasionally hunt for the nobility that ruled [PAWN_nameDef]'s kingdom.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Shooting</key>
+                <value>4</value>
+            </li>
+            <li>
+                <key>Social</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Animals</key>
+                <value>-3</value>
+            </li>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Yeoman archer -->
+    <BackstoryDef>
+        <defName>VFEMA009</defName>
+        <slot>Adulthood</slot>
+        <title>Yeoman archer</title>
+        <titleShort>Archer</titleShort>
+        <baseDesc>[PAWN_nameDef] and the rest of [PAWN_possessive] village were decreed to practice archery for 2 hour after church every week. Years later this practice payed off when [PAWN_nameDef]'s village was called to serve [PAWN_possessive] lord as archers.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Shooting</key>
+                <value>4</value>
+            </li>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Charlatan -->
+    <BackstoryDef>
+        <defName>VFEMA010</defName>
+        <slot>Adulthood</slot>
+        <title>Charlatan</title>
+        <titleShort>Charlatan</titleShort>
+        <baseDesc>After a charlatan fleeced [PAWN_objective] out of all of [PAWN_possessive] money and valuables, [PAWN_nameDef] decided to learn this trade to never be fooled by this deception again.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Social</key>
+                <value>3</value>
+            </li>
+            <li>
+                <key>Intellectual</key>
+                <value>1</value>
+            </li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Siege engineer -->
+    <BackstoryDef>
+        <defName>VFEMA011</defName>
+        <slot>Adulthood</slot>
+        <title>Siege engineer</title>
+        <titleShort>Engineer</titleShort>
+        <baseDesc>Wherever a siege was, [PAWN_nameDef] would be one of the people in [PAWN_possessive] lord's army responsible for constructing ballistae, trebuchets and the like.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Construction</key>
+                <value>5</value>
+            </li>
+            <li>
+                <key>Intellectual</key>
+                <value>1</value>
+            </li>
+            <li>
+                <key>Artistic</key>
+                <value>-2</value>
+            </li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Carpenter -->
+    <BackstoryDef>
+        <defName>VFEMA012</defName>
+        <slot>Adulthood</slot>
+        <title>Carpenter</title>
+        <titleShort>Carpenter</titleShort>
+        <baseDesc>[PAWN_nameDef]'s day-to-day duty was preparing building materials for constructing buildings in [PAWN_possessive] village, while also having picked up some skills from masters of the craft.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Construction</key>
+                <value>3</value>
+            </li>
+            <li>
+                <key>Crafting</key>
+                <value>2</value>
+            </li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Noble servant -->
+    <BackstoryDef>
+        <defName>VFEMA013</defName>
+        <slot>Adulthood</slot>
+        <title>Noble servant</title>
+        <titleShort>Servant</titleShort>
+        <baseDesc>[PAWN_nameDef] was a servant in a prestigious household, carrying out mundane tasks such as cooking and cleaning. [PAWN_pronoun] has developed a more pleasant mannerism as a result, as well as an appreciation of the finer arts around [PAWN_objective].</baseDesc>
+        <skillGains>
+            <li>
+                <key>Cooking</key>
+                <value>4</value>
+            </li>
+            <li>
+                <key>Social</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Artistic</key>
+                <value>2</value>
+            </li>
+        </skillGains>
+        <workDisables>
+            <li>Violent</li>
+        </workDisables>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBA084</defName>
+        <slot>Adulthood</slot>
+        <title>Torturer</title>
+        <titleShort>Torturer</titleShort>
+        <baseDesc>Working for a tyrannical monarch on a medieval world, [PAWN_nameDef] earned a reputation as an expert in "persuasion." Any prisoner who went down into the dungeons left with no secrets, and with [PAWN_nameDef]'s smile scarred permanently into their nightmares.</baseDesc>
+        <workDisables>
+            <li>Social</li>
+        </workDisables>
+        <requiredWorkTags>
+            <li>Firefighting</li>
+        </requiredWorkTags>
+        <skillGains>
+            <li><key>Melee</key><value>6</value></li>
+        </skillGains>
+        <forcedTraits>
+            <Psychopath>0</Psychopath>
+        </forcedTraits>
+        <spawnCategories>
+            <li>Medieval</li>
+            <li>Rare</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBA152</defName>
+        <slot>Adulthood</slot>
+        <title>Medieval knight</title>
+        <titleShort>Knight</titleShort>
+        <baseDesc>[PAWN_nameDef] fought for king and country on the battlefield, where [PAWN_pronoun] honed [PAWN_possessive] skill with blades, and at court, where [PAWN_pronoun] honed [PAWN_possessive] social skills. [PAWN_possessive] greatest glory was leading a charge into an enemy throne room and capturing the king at sword point.</baseDesc>
+        <skillGains>
+            <li><key>Shooting</key><value>2</value></li>
+            <li><key>Melee</key><value>8</value></li>
+            <li><key>Social</key><value>6</value></li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+            <li>Uncommon</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+</Defs>
