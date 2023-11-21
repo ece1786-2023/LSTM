@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+<!-- happy go lucky -->
+	<ZCB.ZCBackstoryDef>
+		<defName>ZCB_HappyGoLucky</defName>
+		<title>sheltered child</title>
+		<titleShort>sheltered</titleShort>
+		<baseDesc>[PAWN_nameDef] had a sheltered childhood. [PAWN_possessive] childhood had little strife, and [PAWN_pronoun] spent [PAWN_possessive] time daydreaming and drawing.</baseDesc>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>ZCB</li> 							<!-- required -->
+		</spawnCategories>
+		<!-- new tags start here -->
+		<minTechLevel>Medieval</minTechLevel>
+		<commonality>2</commonality>
+		<father>Present</father>
+		<mother>Present</mother>
+		<colonySize>1~99</colonySize>
+		<requiredRecords>
+			<li>	<!-- max 6 hours spent drafted -->
+				<name>TimeDrafted</name>
+				<maxValue>15000</maxValue>
+			</li>
+			<li>		
+				<name>Kills</name>
+				<maxValue>0</maxValue>
+			</li>
+			<li>		
+				<name>ShotsFired</name>
+				<maxValue>5</maxValue>
+			</li>
+		</requiredRecords>
+		<!-- new tags end here-->
+		<skillGains>
+			<li>
+				<key>Shooting</key>
+				<value>-3</value>
+			</li>
+			<li>
+				<key>Melee</key>
+				<value>-3</value>
+			</li>
+			<li>
+				<key>Artistic</key>
+				<value>4</value>
+			</li>
+			<li>
+				<key>Social</key>
+				<value>2</value>
+			</li>
+			<li>
+				<key>Intellectual</key>
+				<value>3</value>
+			</li>
+		</skillGains>
+	</ZCB.ZCBackstoryDef>
+
+
+
+<!-- ================================== HEALTH ================================== -->
+<!-- scarred veteran -->
+	<ZCB.ZCBackstoryDef>
+		<defName>ZCB_ScarredVeteran</defName>
+		<title>scarred veteran</title>
+		<titleShort>scarred</titleShort>
+		<baseDesc>[PAWN_nameDef] reached adulthood with [PAWN_possessive] mind intact, but not [PAWN_possessive] body.</baseDesc>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>ZCB</li> 
+		</spawnCategories>
+		<minTechLevel>Medieval</minTechLevel>
+		<commonality>3</commonality>
+		<bodyPartsMissing>3~999</bodyPartsMissing>
+		<skillGains>
+			<li>
+				<key>Medicine</key>
+				<value>4</value>
+			</li>
+			<li>
+				<key>Intellectual</key>
+				<value>3</value>
+			</li>
+			<li>
+				<key>Melee</key>
+				<value>2</value>
+			</li>
+		</skillGains>
+	</ZCB.ZCBackstoryDef>
+	
+	
+</Defs>

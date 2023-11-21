@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<StoriesRetold.SRBackstoryDef>
+		<defName>REBA071</defName>
+		<slot>Adulthood</slot>
+		<title>Glitterworld officer</title>
+		<titleShort>Officer</titleShort>
+		<baseDesc>Though glitterworlds are peaceful places, they often remain prepared for war. [PAWN_nameDef]'s unit rarely saw any real action. Though [PAWN_pronoun] pursued [PAWN_possessive] artistic hobbies, [PAWN_possessive] subordinates preferred to entertain themselves by brawling, so [PAWN_nameDef] got good at breaking up fights.</baseDesc>
+		<skillGains>
+			<li><key>Melee</key><value>6</value></li>
+			<li><key>Artistic</key><value>4</value></li>
+		</skillGains>
+		<spawnCategories>
+			<li>Offworld</li>
+		</spawnCategories>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Hulk</bodyTypeFemale>
+	</StoriesRetold.SRBackstoryDef>
+
+	<StoriesRetold.SRBackstoryDef>
+		<defName>REBA073</defName>
+		<slot>Adulthood</slot>
+		<title>Novelist</title>
+		<titleShort>Novelist</titleShort>
+		<baseDesc>[PAWN_nameDef] lived on a glitterworld, penning wildly successful novels. [PAWN_pronoun] lived a carefree lifestyle, spending [PAWN_possessive] days writing and [PAWN_possessive] nights partying... and never did a day's manual labour in [PAWN_possessive] life.</baseDesc>
+		<requiredWorkTags>
+			<li>Intellectual</li>
+		</requiredWorkTags>
+		<skillGains>
+			<li><key>Artistic</key><value>8</value></li>
+		</skillGains>
+		<workDisables>
+			<li>ManualDumb</li>
+		</workDisables>
+		<spawnCategories>
+			<li>Offworld</li>
+		</spawnCategories>
+		<bodyTypeMale>Thin</bodyTypeMale>
+		<bodyTypeFemale>Thin</bodyTypeFemale>
+	</StoriesRetold.SRBackstoryDef>
+
+	<StoriesRetold.SRBackstoryDef>
+		<defName>REBA075</defName>
+		<slot>Adulthood</slot>
+		<title>VR designer</title>
+		<titleShort>Game dev</titleShort>
+		<baseDesc>[PAWN_nameDef] designed virtual reality simulations for glitterworld citizens. [PAWN_pronoun] paid great attention to the details of [PAWN_possessive] world, including learning all [PAWN_pronoun] could about plant life to make [PAWN_possessive] landscapes more realistic.</baseDesc>
+		<skillGains>
+			<li><key>Construction</key><value>3</value></li>
+			<li><key>Plants</key><value>4</value></li>
+			<li><key>Artistic</key><value>5</value></li>
+		</skillGains>
+		<spawnCategories>
+			<li>Offworld</li>
+		</spawnCategories>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+	</StoriesRetold.SRBackstoryDef>
+
+	<StoriesRetold.SRBackstoryDef>
+		<defName>REBA150</defName>
+		<slot>Adulthood</slot>
+		<title>Glitterworld minister</title>
+		<titleShort>Minister</titleShort>
+		<baseDesc>[PAWN_nameDef] secured a minor, but important, position in the government of a glitterworld. [PAWN_pronoun] had ample time for pleasure and indulgence, and enjoyed the opulence, but still appreciated the value of hard work, as well, and always strove to keep [PAWN_possessive] citizens content.</baseDesc>
+		<skillGains>
+			<li><key>Intellectual</key><value>3</value></li>
+			<li><key>Shooting</key><value>2</value></li>
+			<li><key>Social</key><value>4</value></li>
+			<li><key>Crafting</key><value>3</value></li>
+		</skillGains>
+		<spawnCategories>
+			<li>Offworld</li>
+		</spawnCategories>
+		<bodyTypeMale>Thin</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+	</StoriesRetold.SRBackstoryDef>
+
+	<StoriesRetold.SRBackstoryDef>
+		<defName>REBA151</defName>
+		<slot>Adulthood</slot>
+		<title>Xenobiologist</title>
+		<titleShort>Biologist</titleShort>
+		<baseDesc>[PAWN_nameDef] was a xenobiology professor at a glitterworld university, with a bit of an artistic bent. In addition to teaching, researching and attending professional conferences, [PAWN_pronoun] also managed an art gallery.</baseDesc>
+		<skillGains>
+			<li><key>Intellectual</key><value>4</value></li>
+			<li><key>Social</key><value>4</value></li>
+			<li><key>Cooking</key><value>-5</value></li>
+			<li><key>Artistic</key><value>7</value></li>
+			<li><key>Crafting</key><value>4</value></li>
+		</skillGains>
+		<spawnCategories>
+			<li>Offworld</li>
+		</spawnCategories>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+	</StoriesRetold.SRBackstoryDef>
+	
+</Defs>
