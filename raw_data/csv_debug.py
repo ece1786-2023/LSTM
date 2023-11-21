@@ -8,7 +8,7 @@
 @Date   ：2023/11/19 13:03
 **************************************************
 '''
-
+import numpy as np
 import pandas as pd
 data_file_path="backstory.pkl"
 df = pd.read_pickle(data_file_path)
@@ -22,6 +22,7 @@ for i in range(len_data):
     sentences[i]="This is the story of [PAWN_nameDef], a "+titles[i]+": "+str(sentences[i])
     # TODO problem at sentence[21], reason: bad sentence truncation
 
+df = pd.DataFrame(sentences)
 # Create a custom dataset
 # dataset = RimWordDS(sentences, tokenizer)
 

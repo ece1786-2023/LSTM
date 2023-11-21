@@ -14,7 +14,7 @@
       "single_word": false,
       "lstrip": false,
       "rstrip": false,
-      "normalized": false,
+      "normalized": true,
       "special": true
     }
   ],
