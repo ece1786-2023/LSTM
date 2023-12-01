@@ -77,7 +77,7 @@ token_pronoun = "[PAWN_pronoun]"
 
 # Fine-tuning parameters
 max_epochs = 30  # the maximum number of epochs the trainer is allowed to run, if early stopping condition is never met
-learning_rate = 1e-5
+learning_rate = 5e-5
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("using device " + str(device))
@@ -112,9 +112,9 @@ for i in range(len_data):
 # convert backstory into proper prompt
 
 
-sentences_train, sentences_test = train_test_split(sentences, test_size=0.3, random_state=42)
+sentences_train, sentences_test = train_test_split(sentences, test_size=0.1, random_state=42)
 # using a small dataset for development purposes
-sentences_train, sentences_test = train_test_split(sentences_test, test_size=0.1, random_state=42)
+#sentences_train, sentences_test = train_test_split(sentences_test, test_size=0.1, random_state=42)
 
 # Create a custom dataset
 dataset_train = RimWordDS(sentences_train, tokenizer)
