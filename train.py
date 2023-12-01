@@ -51,26 +51,44 @@ def lm_collate_fn(batch, device):
     # return torch.stack(batch, 0)
 
 
+def test_loss_plateau(epoch, loss_ot):
+    """
+    Retruns True if there has been 2 epochs where test loss increases after the last 4 epochs
+    :param epoch: the number of finished training epochs-1
+    :param loss_ot: array containing test loss overtime
+    """
+    # todo tune the plateau parameters 4 and 2
+    if epoch < 5:
+        return False
+    else:
+        count=0
+        for i in range(5):
+            count += int(loss_ot[epoch - i] > loss_ot[epoch - i - 1])
+        if count>=3:
+            print("Reached plateau in epoch",epoch+1)
+            return True
+        else: return False
+
+
 # Add special tokens
 token_name = "[PAWN_nameDef]"
 token_possessive = "[PAWN_possessive]"
 token_pronoun = "[PAWN_pronoun]"
 
 # Fine-tuning parameters
-epochs = 10
-learning_rate = 5e-6
+max_epochs = 30  # the maximum number of epochs the trainer is allowed to run, if early stopping condition is never met
+learning_rate = 1e-5
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("using device " + str(device))
 
 # the model to load from
 model_name_load = "gpt2"  # get a fresh gpt-2 model from hugging face
-# model_name_load="ft1" #load a previously saved model
+# model_name_load="ft1" #load a previously saved model, fine-tune 1
 
 # the model to save as
 model_name_save = "models/ft1"  # get a fresh gpt-2 model from hugging face
 
-# data_file_path="raw_data/backstory.csv"
 data_file_path = "raw_data/backstory.pkl"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name_load)
@@ -94,7 +112,9 @@ for i in range(len_data):
 # convert backstory into proper prompt
 
 
-sentences_train, sentences_test = train_test_split(sentences, test_size=0.1, random_state=42)
+sentences_train, sentences_test = train_test_split(sentences, test_size=0.3, random_state=42)
+# using a small dataset for development purposes
+sentences_train, sentences_test = train_test_split(sentences_test, test_size=0.1, random_state=42)
 
 # Create a custom dataset
 dataset_train = RimWordDS(sentences_train, tokenizer)
@@ -105,10 +125,8 @@ dataset_test = RimWordDS(sentences_test, tokenizer)
 # Set up DataLoader
 # dataloader_train = DataLoader(dataset_train, batch_size=1, shuffle=True)
 # dataloader_test = DataLoader(dataset_test, batch_size=1, shuffle=True)
-dataloader_train = DataLoader(dataset_train, batch_size=8, shuffle=True,
-                              collate_fn=lambda batch: lm_collate_fn(batch, device))
-dataloader_test = DataLoader(dataset_test, batch_size=8, shuffle=True,
-                             collate_fn=lambda batch: lm_collate_fn(batch, device))
+dataloader_train = DataLoader(dataset_train, batch_size=8, shuffle=True, collate_fn=lambda batch: lm_collate_fn(batch, device))
+dataloader_test = DataLoader(dataset_test, batch_size=8, shuffle=True, collate_fn=lambda batch: lm_collate_fn(batch, device))
 # TODO padding to allow batching
 dataloader_train_len = len(dataloader_train)
 dataloader_test_len = len(dataloader_test)
@@ -117,34 +135,34 @@ dataloader_test_len = len(dataloader_test)
 optimizer = AdamW(model.parameters(), lr=learning_rate)
 # TODO optimizer selection
 
-loss_ot_train = np.zeros(epochs)
-loss_ot_test = np.zeros(epochs)
+loss_ot_train = np.zeros(max_epochs)
+loss_ot_test = np.zeros(max_epochs)
 
 # Fine-tune loop
 model.train()
-for epoch in range(epochs):
+for epoch in range(max_epochs):
     total_loss_train = 0
     total_loss_test = 0
 
-    progress_bar = tqdm(dataloader_train, desc=f"Epoch {epoch + 1}/{epochs}")
+    progress_bar = tqdm(dataloader_train, desc=f"Epoch {epoch}")
 
-    # for batch in progress_bar:
-    #     # Move batch to device
-    #     batch = {"input_ids": batch[0], "attention_mask": batch[1]}
-    #     # batch = {key: value[0].to(device) for key, value in batch.items()}
-    #
-    #     # Forward pass
-    #     outputs = model(**batch, labels=batch["input_ids"])
-    #     loss = outputs.loss
-    #
-    #     # Backward pass and optimization
-    #     optimizer.zero_grad()
-    #     loss.backward()
-    #     optimizer.step()
-    #
-    #     total_loss_train += loss.item()
-    #     # Update progress bar
-    #     progress_bar.set_postfix({"Loss": total_loss_train / dataloader_train_len})
+    for batch in progress_bar:
+        # Move batch to device
+        batch = {"input_ids": batch[0], "attention_mask": batch[1]}
+        # batch = {key: value[0].to(device) for key, value in batch.items()}
+
+        # Forward pass
+        outputs = model(**batch, labels=batch["input_ids"])
+        loss = outputs.loss
+
+        # Backward pass and optimization
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+        total_loss_train += loss.item()
+        # Update progress bar
+        progress_bar.set_postfix({"Loss": total_loss_train / dataloader_train_len})
 
     for batch_idx, batch in enumerate(dataloader_test, 1):
         # Move batch to device
@@ -157,21 +175,33 @@ for epoch in range(epochs):
 
         total_loss_test += loss.item()
     total_loss_test /= dataloader_test_len
-    print("Epoch ", epoch, "/", epochs, ": Test loss=", total_loss_test)
+    print(f"Epoch {epoch}: Test loss={total_loss_test}")
 
     # record loss of the epoch
     loss_ot_train[epoch] = total_loss_train / dataloader_train_len
     loss_ot_test[epoch] = total_loss_test
 
-fig, splot = plt.subplots(1)
-domain = np.arange(epochs)
-splot.plot(domain, loss_ot_train, 'g', label="train")
-splot.plot(domain, loss_ot_test, 'r', label="test")
-print(loss_ot_train)
-print(loss_ot_test)
-splot.legend()
-fig.show()
-splot.title.set_text("Loss over time")
+    if test_loss_plateau(epoch, loss_ot_test):
+        max_epochs = epoch + 1
+        break
 
-# model.save_pretrained(model_name_save)
-# tokenizer.save_pretrained(model_name_save)
+fig, splot = plt.subplots(1)
+domain = np.arange(max_epochs)
+splot.plot(domain, loss_ot_train[0:max_epochs], 'g', label="train")
+splot.plot(domain, loss_ot_test[0:max_epochs], 'r', label="test")
+# print(loss_ot_train)
+# print(loss_ot_test)
+plt.xlim([0, max_epochs-1])
+# plt.ylim([0, np.ceil(loss_ot_train[0])])
+# plt.ylim([0, 3])#doesn't work with log scale
+plt.yscale("log")
+splot.legend()
+splot.title.set_text("Loss over time")
+plt.xlabel("epoch")
+plt.ylabel("loss")
+plt.savefig("figure/loss overtime1.png")
+
+model.save_pretrained(model_name_save)
+tokenizer.save_pretrained(model_name_save)
+
+# %%
