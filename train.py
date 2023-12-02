@@ -77,7 +77,7 @@ token_pronoun = "[PAWN_pronoun]"
 
 # Fine-tuning parameters
 max_epochs = 30  # the maximum number of epochs the trainer is allowed to run, if early stopping condition is never met
-learning_rate = 5e-5
+learning_rate = 5e-6
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("using device " + str(device))
@@ -99,22 +99,25 @@ model = AutoModelForCausalLM.from_pretrained(model_name_load).to(device)
 
 # data_file_path="backstory.pkl"
 df = pd.read_pickle(data_file_path)
+attributes=df["Attribute"]
 titles = df["Title"]
 sentences = df["Desc"]
 sentences = sentences.tolist()
 len_data = len(titles)
 
+# generating sentences (training instances)
 for i in range(len_data):
     # print(i,type(sentences[i]),str(sentences[i]))
-    sentences[i] = "This is the story of [PAWN_nameDef], a " + titles[i] + ": " + sentences[i]
-    # TODO attributes
+    skill_modifiers_str=attributes[i].lower().replace("\t", ", ").replace("-", " -").replace("+", " +").strip(", ")
+    sentences[i] = "This is the story of [PAWN_nameDef], a " + titles[i] + " with "+skill_modifiers_str+": " + sentences[i]
+    #print(sentences[i])
 
 # convert backstory into proper prompt
 
 
-sentences_train, sentences_test = train_test_split(sentences, test_size=0.1, random_state=42)
+sentences_train, sentences_test = train_test_split(sentences, test_size=0.5, random_state=42)
 # using a small dataset for development purposes
-#sentences_train, sentences_test = train_test_split(sentences_test, test_size=0.1, random_state=42)
+sentences_train, sentences_test = train_test_split(sentences_test, test_size=0.1, random_state=42)
 
 # Create a custom dataset
 dataset_train = RimWordDS(sentences_train, tokenizer)
@@ -203,5 +206,3 @@ plt.savefig("figure/loss overtime1.png")
 
 model.save_pretrained(model_name_save)
 tokenizer.save_pretrained(model_name_save)
-
-# %%
