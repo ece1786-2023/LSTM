@@ -19,35 +19,38 @@ from tqdm import tqdm
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 data_file_path = "raw_data/backstory.pkl"
 df = pd.read_pickle(data_file_path)
-titles = df["Title"].tolist()
-titles_train, titles_test = train_test_split(titles, test_size=0.1, random_state=42)
-titles_test = titles_test[:50]
+#split the df into 2
+df_train, df_test = train_test_split(df, test_size=0.1, random_state=44)
+df_test=df_test.reset_index()
+titles=df_test["Title"]
+attributes=df_test["Attribute"]
+
+
 
 model_path = "models/ft1"
 print("using device " + str(device))
-num_output = 50  # number of output desired
 
-# tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
-# model = AutoModelForCausalLM.from_pretrained(model_path, local_files_only=True).to(device)
-tokenizer = AutoTokenizer.from_pretrained('gpt2')
-model = AutoModelForCausalLM.from_pretrained('gpt2').to(device)
+tokenizer = AutoTokenizer.from_pretrained(model_path, local_files_only=True)
+model = AutoModelForCausalLM.from_pretrained(model_path, local_files_only=True).to(device)
+#tokenizer = AutoTokenizer.from_pretrained('gpt2')
+#model = AutoModelForCausalLM.from_pretrained('gpt2').to(device)
 
+num_output = 10  # number of output desired
 ids_ls = []
-for title_test in titles_test:
-    prompt = "This is the story of [PAWN_nameDef], a " + title_test + ":"
+for i in range(num_output):
+    skill_modifiers_str = attributes[i].lower().replace("\t", ", ").replace("-", " -").replace("+", " +").strip(", ")
+    prompt = "This is the story of [PAWN_nameDef], a " + titles[i] +": "
     input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
     ids_ls.append(input_ids)
 
-print(input_ids.get_device())
+#print(input_ids.get_device())
 
 # sample up to 30 tokens
 list_out = []
 sentence_out = []
 total_loss_test = 0
-# ['Today I believe we can finally get rid of discrimination," said Rep. Mark Pocan (D-Wis.).\n\n"Just look at the']
 for i in range(num_output):
-    outputs = model.generate(ids_ls[i], do_sample=True, max_length=70, temperature=1, top_p=1,
-                             repetition_penalty=1)
+    outputs = model.generate(ids_ls[i], do_sample=True, max_length=80, temperature=1, top_p=1,repetition_penalty=1)
     # TODO output length
     list_out.append(outputs)
 loss = total_loss_test/50
@@ -55,5 +58,6 @@ loss = total_loss_test/50
 for i in range(num_output):
     generate_sentence = tokenizer.batch_decode(list_out[i], skip_special_tokens=True)
     sentence_out.append(generate_sentence)
+    print(generate_sentence)
 df = pd.DataFrame(sentence_out)
 df.to_pickle('models/Story_generate/gpt2_50_70.pkl')
