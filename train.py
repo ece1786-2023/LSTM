@@ -115,9 +115,9 @@ for i in range(len_data):
 # convert backstory into proper prompt
 
 
-sentences_train, sentences_test = train_test_split(sentences, test_size=0.5, random_state=42)
+sentences_train, sentences_test = train_test_split(sentences, test_size=0.1, random_state=42)
 # using a small dataset for development purposes
-sentences_train, sentences_test = train_test_split(sentences_test, test_size=0.1, random_state=42)
+#sentences_train, sentences_test = train_test_split(sentences_test, test_size=0.1, random_state=42)
 
 # Create a custom dataset
 dataset_train = RimWordDS(sentences_train, tokenizer)
@@ -192,8 +192,8 @@ fig, splot = plt.subplots(1)
 domain = np.arange(max_epochs)
 splot.plot(domain, loss_ot_train[0:max_epochs], 'g', label="train")
 splot.plot(domain, loss_ot_test[0:max_epochs], 'r', label="test")
-# print(loss_ot_train)
-# print(loss_ot_test)
+np.save("loss_record/loss_ot_train",loss_ot_train[0:max_epochs])
+np.save("loss_record/loss_ot_test",loss_ot_test[0:max_epochs])
 plt.xlim([0, max_epochs-1])
 # plt.ylim([0, np.ceil(loss_ot_train[0])])
 # plt.ylim([0, 3])#doesn't work with log scale

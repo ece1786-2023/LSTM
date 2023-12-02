@@ -20,7 +20,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 data_file_path = "raw_data/backstory.pkl"
 df = pd.read_pickle(data_file_path)
 #split the df into 2
-df_train, df_test = train_test_split(df, test_size=0.1, random_state=44)
+df_train, df_test = train_test_split(df, test_size=0.1, random_state=42)
 df_test=df_test.reset_index()
 titles=df_test["Title"]
 attributes=df_test["Attribute"]
@@ -39,7 +39,7 @@ num_output = 10  # number of output desired
 ids_ls = []
 for i in range(num_output):
     skill_modifiers_str = attributes[i].lower().replace("\t", ", ").replace("-", " -").replace("+", " +").strip(", ")
-    prompt = "This is the story of [PAWN_nameDef], a " + titles[i] +": "
+    prompt = "This is the story of [PAWN_nameDef], a " + titles[i] + " with "+skill_modifiers_str+": "
     input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
     ids_ls.append(input_ids)
 
@@ -58,6 +58,6 @@ loss = total_loss_test/50
 for i in range(num_output):
     generate_sentence = tokenizer.batch_decode(list_out[i], skip_special_tokens=True)
     sentence_out.append(generate_sentence)
-    print(generate_sentence)
+    print(generate_sentence[0])
 df = pd.DataFrame(sentence_out)
 df.to_pickle('models/Story_generate/gpt2_50_70.pkl')
