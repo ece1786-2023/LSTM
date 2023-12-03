@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+<!-- ugly -->
+	<ZCB.ZCBackstoryDef>
+		<defName>ZCB_UglyChild</defName>
+		<title>ugly child</title>
+		<titleShort>ugly</titleShort>
+		<baseDesc>[PAWN_nameDef] was quite an ugly child. [PAWN_pronoun] worked extra hard to make friends.</baseDesc>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>ZCB</li> 		
+			<li>ZCB_NaturalMeditation</li> 	
+		</spawnCategories>
+		<commonality>1</commonality>
+		<requiredPassions>
+			<li>Social</li>
+		</requiredPassions>
+		<requiredTraits>
+			 <Beauty>-1</Beauty>
+		</requiredTraits>
+		<skillGains>
+			<li>
+				<key>Social</key>
+				<value>3</value>
+			</li>
+		</skillGains>
+	</ZCB.ZCBackstoryDef>
+	
+	
+<!-- staggeringly ugly -->
+	<ZCB.ZCBackstoryDef>
+		<defName>ZCB_UglyChild2</defName>
+		<title>staggeringly ugly child</title>
+		<titleShort>ugly</titleShort>
+		<baseDesc>[PAWN_nameDef] was a staggeringly ugly child. [PAWN_pronoun] worked extra hard to make friends, baking treats for the rest of the colony to win favor.</baseDesc>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>ZCB</li> 		
+			<li>ZCB_NaturalMeditation</li> 	
+		</spawnCategories>
+		<commonality>2.2</commonality>
+		<requiredRecords>
+			<li>
+				<name>MealsCooked</name>
+				<minValue>50</minValue>
+			</li>
+		</requiredRecords>
+		<requiredPassions>
+			<li>Social</li>
+		</requiredPassions>
+		<requiredTraits>
+			 <Beauty>-2</Beauty>
+		</requiredTraits>
+		<skillGains>
+			<li>
+				<key>Social</key>
+				<value>5</value>
+			</li>
+			<li>
+				<key>Cooking</key>
+				<value>2</value>
+			</li>
+		</skillGains>
+	</ZCB.ZCBackstoryDef>
+	
+
+<!-- Undergrounder -->
+	<ZCB.ZCBackstoryDef>
+		<defName>ZCB_Undergrounder</defName>
+		<title>tunnel kid</title>
+		<titleShort>tunnel kid</titleShort>
+		<baseDesc>[PAWN_nameDef] loved exploring and expanding the tunnels that extended from his home. [PAWN_pronoun] enjoyed any kind of digging, even helping plow and till [PAWN_possessive] colony's farms.</baseDesc>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>ZCB</li> 	
+			<li>ZCB_NaturalMeditation</li> 		
+		</spawnCategories>
+		<commonality>2</commonality>
+		<requiredTraits>
+			 <Undergrounder>0</Undergrounder>
+		</requiredTraits>
+		<requiredPassions>
+			<li>Mining</li>
+		</requiredPassions>
+		<skillGains>
+			<li>
+				<key>Mining</key>
+				<value>5</value>
+			</li>
+			<li>
+				<key>Plants</key>
+				<value>4</value>
+			</li>
+			<li>
+				<key>Intellectual</key>
+				<value>-3</value>
+			</li>
+		</skillGains>
+	</ZCB.ZCBackstoryDef>
+	
+
+	
+	<!-- Bloodlust ranged -->
+	<ZCB.ZCBackstoryDef>
+		<defName>ZCB_Assassin</defName>
+		<title>assassin</title>
+		<titleShort>assassin</titleShort>
+		<baseDesc>[PAWN_nameDef] loved watching [PAWN_possessive] enemies die through a scope. Or [PAWN_possessive] friends, [PAWN_pronoun] wasn't picky.</baseDesc>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>ZCB</li> 
+		</spawnCategories>
+		<commonality>2.5</commonality>
+		<requiredTraits>
+			 <Bloodlust>0</Bloodlust>
+		</requiredTraits>
+		<requiredPassions>
+			<li>Shooting</li>
+		</requiredPassions>
+		<skillGains>
+			<li>
+				<key>Shooting</key>
+				<value>6</value>
+			</li>
+			<li>
+				<key>Social</key>
+				<value>-4</value>
+			</li>
+		</skillGains>
+	</ZCB.ZCBackstoryDef>
+	
+	
+</Defs>

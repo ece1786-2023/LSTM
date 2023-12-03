@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<BackstoryDef>
+		<defName>VB_Serial_Cleaner</defName>
+		<title>Serial cleaner</title>
+		<titleShort>Cleaner</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] had the job of cleaning up after a urbworld mob. Eventually though, [PAWN_nameDef] became too much of a liability to be left alive. [PAWN_pronoun] managed to smuggle [PAWN_objective]self onto a ship to escape, but [PAWN_pronoun] still watches over [PAWN_possessive] shoulder.</baseDesc>
+		<spawnCategories>
+			<li>Outsider</li>
+			<li>Pirate</li>
+			<li>Sadist</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Social</key><value>-5</value></li>
+			<li><key>Melee</key><value>5</value></li>
+			<li><key>Shooting</key><value>5</value></li>
+		</skillGains>
+		<workDisables>
+			<li>Caring</li>
+		</workDisables>
+		<forcedTraits>
+			<Bloodlust>0</Bloodlust>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Astronaut</defName>
+		<title>Astronaut</title>
+		<titleShort>Astronaut</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was part of an urbworld space program. Due to malfunctionioning equipment they were left stranded in space. Many years later they would be released from cryosleep on a far away planet.
+		</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Scientist</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Intellectual</key><value>5</value></li>
+			<li><key>Construction</key><value>3</value></li>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Sleepingbeauty</defName>
+		<title>sleeping beauty</title>
+		<titleShort>beauty</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef]'s cryptosleep casket was found on an undeveloped world. People from around this world would come to admire [PAWN_possessive] beauty. After someone managed to unlock the casket, [PAWN_nameDef] was forced to flee from [PAWN_possessive] admirers. [PAWN_nameDef] has gotten used to being waited on hand and foot.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Social</key><value>6</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Beauty>2</Beauty>
+		</forcedTraits>
+		<workDisables>
+			<li>ManualDumb</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Oldworlder</defName>
+		<title>Oldworlder</title>
+		<titleShort>Oldworlder</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was preserved using an early form of cryptosleep to save them from a then uncurable disease. After being revived and cured of the disease, [PAWN_nameDef] was given an enormous medical bill by the megacorp that revived them and [PAWN_pronoun] has been running ever since. </baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>4</value></li>
+			<li><key>Social</key><value>4</value></li>
+		</skillGains>
+		<forcedTraits>
+			<SpeedOffset>2</SpeedOffset>
+		</forcedTraits>
+		<workDisables>
+			<li>ManualSkilled</li>
+		</workDisables>
+		<possessions>
+			<li>
+				<key>Gun_Autopistol</key>
+				<value>1</value>
+			</li>
+		</possessions>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Overseer</defName>
+		<title>Overseer</title>
+		<titleShort>Overseer</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] had the job of managing an organization that prevented the population of an urbworld from knowing about otherworldly forces. [PAWN_nameDef] had successfully neutralized anything from animal-maddening psychic devices to bald humanoids with elongated fingers, and did so under the organizations motto of secure, capture, and destroy.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>3</value></li>
+			<li><key>Intellectual</key><value>5</value></li>
+			<li><key>Social</key><value>-5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<TooSmart>0</TooSmart>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Xenotechnician</defName>
+		<title>Xenotechnician</title>
+		<titleShort>Technician</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Thin</bodyTypeMale>
+		<bodyTypeFemale>Thin</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was responsible for thousands of successful vatbirths. [PAWN_nameDef] eventually lost [PAWN_possessive] job after taking [PAWN_possessive] experiments too far.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Scientist</li>
+			<li>ImperialCommon</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Intellectual</key><value>5</value></li>
+			<li><key>Medicine</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<GreatMemory>0</GreatMemory>
+			<TooSmart>0</TooSmart>
+		</forcedTraits>
+		<workDisables>
+			<li>ManualDumb</li>
+		</workDisables>
+	</BackstoryDef>
+	
+	<BackstoryDef>
+		<defName>VB_Shaman</defName>
+		<title>Shaman</title>
+		<titleShort>Shaman</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was a well respected shaman among [PAWN_possessive] people. They were able to cure a variety of aliments using knowledge gained from their "skyparents".</baseDesc>
+		<spawnCategories>
+			<li>Tribal</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Intellectual</key><value>3</value></li>
+			<li><key>Medicine</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<GreatMemory>0</GreatMemory>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Hippie</defName>
+		<title>Hippie</title>
+		<titleShort>Hippie</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Thin</bodyTypeMale>
+		<bodyTypeFemale>Thin</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] ran with a counterculture crowd on an urbworld planet. After the group irritated the local junklord with their peaceful protests, they had little choice but to flee to the stars.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Artistic</key><value>5</value></li>
+			<li><key>Animals</key><value>5</value></li>
+			<li><key>Plants</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<DrugDesire>1</DrugDesire>
+			<Kind>0</Kind>
+		</forcedTraits>
+		<workDisables>
+			<li>Violent</li>
+		</workDisables>
+		<disallowedTraits>
+			<Bloodlust>0</Bloodlust>
+			<Psychopath>0</Psychopath>
+			<Abrasive>0</Abrasive>
+		</disallowedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Stocktrader</defName>
+		<title>Stocktrader</title>
+		<titleShort>Stocktrader</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was part of a successful stock trading firm. [PAWN_pronoun] was able to outperform most of [PAWN_possessive] department through constant consumption of Wake Up and Yayo, which [PAWN_nameDef]'s employer took a blind eye to. [PAWN_nameDef] lost [PAWN_possessive] job after taking part in a "random" chemical test, though [PAWN_pronoun] suspects [PAWN_pronoun] was chosen due to office politics.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Intellectual</key><value>3</value></li>
+			<li><key>Social</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Neurotic>1</Neurotic>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Handyman</defName>
+		<title>Handyman</title>
+		<titleFemale>Handywoman</titleFemale>
+		<titleShort>Fixer</titleShort>
+		<bodyTypeMale>Fat</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<slot>Adulthood</slot>
+		<baseDesc>[PAWN_nameDef] was always handy around the house. [PAWN_pronoun] even had a show about reparing things around the house called "[PAWN_nameDef]'s Improvements". [PAWN_nameDef]'s catchphrase on the show was "ooh-AH". </baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Crafting</key><value>5</value></li>
+			<li><key>Construction</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Industriousness>1</Industriousness>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Wrestler</defName>
+		<title>Wrestler</title>
+		<titleShort>Wrestler</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Hulk</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was a popular wrestler on [PAWN_possessive] homeworld. Even after retiring, [PAWN_nameDef] still feels the need to smash furniture over someone's head.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+			<li>Pirate</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Melee</key><value>8</value></li>
+			<li><key>Construction</key><value>-3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Brawler>0</Brawler>
+		</forcedTraits>
+		<disallowedTraits>
+			<Wimp>0</Wimp>
+		</disallowedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Talkshow</defName>
+		<title>Show Host</title>
+		<titleShort>Show Host</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Fat</bodyTypeMale>
+		<bodyTypeFemale>Thin</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was the host of the "[PAWN_nameDef] Show", where [PAWN_pronoun] would make fun of [PAWN_possessive] guests and try to capitalize on trends. This was until one of [PAWN_possessive] guests burned down the studio. [PAWN_nameDef] was lucky to escape with [PAWN_possessive] life.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Social</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<AnnoyingVoice>0</AnnoyingVoice>
+		</forcedTraits>
+		<workDisables>
+			<li>Firefighting</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_President</defName>
+		<title>President</title>
+		<titleShort>President</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was elected president of an urbworld country. During a war on said urbworld, [PAWN_nameDef] pushed a big red button that activated the country's nuclear arsenal. After activating the button, [PAWN_nameDef] and [PAWN_possessive] cabinet escaped to the stars.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Social</key><value>5</value></li>
+			<li><key>Intellectual</key><value>3</value></li>
+		</skillGains>
+		<workDisables>
+			<li>ManualDumb</li>
+			<li>ManualSkilled</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Collector</defName>
+		<title>Relic collector</title>
+		<titleShort>Collector</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] collects ancient technnology left behind. Someday, [PAWN_pronoun] hopes to know what it all does.</baseDesc>
+		<spawnCategories>
+			<li>Tribal</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Intellectual</key><value>5</value></li>
+			<li><key>Crafting</key><value>3</value></li>
+		</skillGains>
+		<workDisables>
+			<li>ManualDumb</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Junklord</defName>
+		<title>Junklord</title>
+		<titleShort>Junklord</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Hulk</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was a leader on a post apocalyptic planet. [PAWN_pronoun] used [PAWN_possessive] slaves to find valuable scrap and equipment. After the slaves found an ancient stock of weaponry while scavenging, [PAWN_nameDef] was forced to flee from an armed rebellion.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+			<li>Pirate</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Social</key><value>3</value></li>
+			<li><key>Shooting</key><value>5</value></li>
+			<li><key>Crafting</key><value>4</value></li>
+		</skillGains>
+		<workDisables>
+			<li>ManualDumb</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Homesteader</defName>
+		<title>Homesteader</title>
+		<titleShort>Homesteader</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] spent [PAWN_possessive] life preparing for the worst. [PAWN_pronoun] always kept [PAWN_possessive] shotgun nearbuy to keep miscreants away from [PAWN_possessive] daughter.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Plants</key><value>5</value></li>
+			<li><key>Animals</key><value>3</value></li>
+			<li><key>Shooting</key><value>3</value></li>
+		</skillGains>
+		<workDisables>
+			<li>Intellectual</li>
+		</workDisables>
+		<possessions>
+			<li>
+				<key>Gun_PumpShotgun</key>
+				<value>1</value>
+			</li>
+		</possessions>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_psychite_oracle</defName>
+		<title>Psychite Oracle</title>
+		<titleShort>Oracle</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Thin</bodyTypeMale>
+		<bodyTypeFemale>Thin</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] always had a what some would call "instinct", being able to almost know what is going to happen. When [PAWN_nameDef] started taking chems, that instinct became vivid visions of the future. Since [PAWN_pronoun] discovered this, [PAWN_pronoun] has been using [PAWN_possessive] abilities to the detriment of [PAWN_possessive] health.</baseDesc>
+		<spawnCategories>
+			<li>Tribal</li>
+			<li>Outlander</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Intellectual</key><value>5</value></li>
+			<li><key>Social</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<PsychicSensitivity>1</PsychicSensitivity>
+			<DrugDesire>1</DrugDesire>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Technophobe</defName>
+		<title>Technophobe</title>
+		<titleShort>Techphobe</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] is extremely sensitive to electromagnetic radiation, or atleast [PAWN_pronoun] believes [PAWN_pronoun] is. Oddly enough, [PAWN_nameDef]'s reactions to electromagnetism is dependent on [PAWN_objective] noticing it is nearby.</baseDesc>
+		<spawnCategories>
+			<li>Tribal</li>
+			<li>Outlander</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Medicine</key><value>3</value></li>
+		</skillGains>
+		<workDisables>
+			<li>Intellectual</li>
+			<li>Constructing</li>
+			<li>Crafting</li>
+		</workDisables>
+		<forcedTraits>
+			<BodyPurist>0</BodyPurist>
+		</forcedTraits>
+		<disallowedTraits>
+			<Transhumanist>0</Transhumanist>
+		</disallowedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Imposter</defName>
+		<title>Imposter</title>
+		<titleShort>Imposter</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Thin</bodyTypeMale>
+		<bodyTypeFemale>Thin</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef]'s research team discovered a strange creature that could take human form. The research team put a vote to destroy [PAWN_nameDef] under the belief [PAWN_pronoun] was the creature, which forced [PAWN_objective] to escape. Now far from that planet, [PAWN_nameDef] hopes that they picked the wrong one.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Scientist</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Intellectual</key><value>5</value></li>
+			<li><key>Medicine</key><value>5</value></li>
+		</skillGains>
+		<workDisables>
+			<li>Firefighting</li>
+		</workDisables>
+	</BackstoryDef>
+	
+	<BackstoryDef>
+		<defName>VB_Android</defName>
+		<title>Android</title>
+		<titleShort>Android</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] had a job pretending to be an android so advanced they were indistinguishable from a human. During this time, [PAWN_pronoun] picked up some skills from [PAWN_possessive] "creator". Eventually, people stopped buying the ruse, but [PAWN_nameDef] can still do a sick robot dance.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Social</key><value>3</value></li>
+			<li><key>Crafting</key><value>3</value></li>
+			<li><key>Intellectual</key><value>3</value></li>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Patriot</defName>
+		<title>Urbworld patriot</title>
+		<titleShort>Patriot</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] believes in [PAWN_possessive] country's values, even after going to a far off rimworld. [PAWN_nameDef] fought in three wars and can sing [PAWN_possessive] country's national anthem forwards and backwards.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+			<li>Outlander</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>5</value></li>
+			<li><key>Social</key><value>3</value></li>
+			<li><key>Medicine</key><value>3</value></li>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Scrap_Artist</defName>
+		<title>Scrap Artist</title>
+		<titleShort>Artist</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] is skilled at making art from what others would call trash. Not everyone gets what [PAWN_nameDef] is trying to convey, but they can all apreciate [PAWN_possessive] skill at the craft.</baseDesc>
+		<spawnCategories>
+			<li>Outsider</li>
+			<li>Outlander</li>
+			<li>Pirate</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Artistic</key><value>4</value></li>
+			<li><key>Construction</key><value>4</value></li>
+			<li><key>Crafting</key><value>4</value></li>
+		</skillGains>
+		<forcedTraits>
+			<TorturedArtist>0</TorturedArtist>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Wastepacker</defName>
+		<title>Wastepacker</title>
+		<titleShort>Wastepacker</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Hulk</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] wasn't the shapest tool in the shed. [PAWN_pronoun] got a job moving toxic wastepacks. While it probably shortened [PAWN_possessive] lifespan, it paid rather well.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+			<li>Outlander</li>
+			<li>Pirate</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Intellectual</key><value>-3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Industriousness>1</Industriousness>
+			<SpeedOffset>2</SpeedOffset>
+		</forcedTraits>
+		<workDisables>
+			<li>ManualSkilled</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Thrall</defName>
+		<title>Thrall</title>
+		<titleShort>Thralll</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was a willing bloodbag for a powerful hemeophage. The "vampire" taught [PAWN_objective] how to cure the sick, but they probably just wanted to keep their bloodbags healthy.</baseDesc>
+		<spawnCategories>
+			<li>Tribal</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Medicine</key><value>4</value></li>
+			<li><key>Intellectual</key><value>4</value></li>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Prisoner</defName>
+		<title>Prisoner</title>
+		<titleShort>Prisoner</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was a prisoner on an urbworld planet,but managed to escape using some bedsheets and a razor blade.</baseDesc>
+		<spawnCategories>
+			<li>Outlander</li>
+			<li>Outsider</li>
+			<li>Pirate</li>
+			<li>Sadist</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Melee</key><value>5</value></li>
+			<li><key>Crafting</key><value>5</value></li>
+		</skillGains>
+		<workDisables>
+			<li>Caring</li>
+			<li>Intellectual</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Xenogerm_Model</defName>
+		<title>Xenogerm Model</title>
+		<titleShort>Model</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Thin</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] had a job modeling the effects of xenogerms for wealthy clients. Repeated xenogerm implantations has left [PAWN_nameDef] with a damaged immunity system and a deluded sense of grandeur, but [PAWN_pronoun] did catch some of the details about the xenogerms [PAWN_pronoun] was modeling.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Social</key><value>5</value></li>
+			<li><key>Intellectual</key><value>3</value></li>
+			<li><key>Medicine</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Immunity>-1</Immunity>
+		</forcedTraits>
+		<workDisables>
+			<li>ManualDumb</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Data_Smuggler</defName>
+		<title>Data Smuggler</title>
+		<titleShort>Smuggler</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>On advanced worlds where stolen data can be easily detected, smugglers download data into their own brains to avoid detection. [PAWN_nameDef] was lauded for being able to carry large data packets in [PAWN_possessive] brain.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+			<li>Pirate</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>5</value></li>
+			<li><key>Intellectual</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<GreatMemory>0</GreatMemory>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Meat_Vendor</defName>
+		<title>Meat Vendor</title>
+		<titleShort>Vendor</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was known to travel the polluted wastes selling meat on a stick. Few know how [PAWN_nameDef] obtained the meat, and the ones that do could never tell the tale.</baseDesc>
+		<spawnCategories>
+			<li>Outlander</li>
+			<li>Outsider</li>
+			<li>Pirate</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Cooking</key><value>5</value></li>
+			<li><key>Medicine</key><value>3</value></li>
+			<li><key>Social</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Cannibal>0</Cannibal>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Wanderer</defName>
+		<title>Amnesiac wanderer</title>
+		<titleShort>Wanderer</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>No one [PAWN_nameDef] has met knows who [PAWN_nameDef] was before [PAWN_pronoun] lost [PAWN_possessive] memory, but [PAWN_pronoun] remains determined to find out. [PAWN_nameDef]'s travels have led them to acquire various miscellaneous skills, but [PAWN_nameDef] cannot remember what learned in school, or if they even went. </baseDesc>
+		<spawnCategories>
+			<li>Outlander</li>
+			<li>Outsider</li>
+			<li>Pirate</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>4</value></li>
+			<li><key>Cooking</key><value>3</value></li>
+			<li><key>Medicine</key><value>2</value></li>
+			<li><key>Social</key><value>3</value></li>
+			<li><key>Intellectual</key><value>-3</value></li>
+		</skillGains>
+		<disallowedTraits>
+			<GreatMemory>0</GreatMemory>
+		</disallowedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_ParkMascot</defName>
+		<title>Park Mascot</title>
+		<titleShort>Mascot</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] used to work at an urbworld amusement park as an animal mascot. [PAWN_nameDef] got to be pretty good at interacting with the kids, but had to fight off the teenagers who thought pushing [PAWN_objective] over was funny.</baseDesc>
+		<spawnCategories>
+			<li>Outlander</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Melee</key><value>3</value></li>
+			<li><key>Social</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Kind>0</Kind>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Renegade</defName>
+		<title>Renegade</title>
+		<titleShort>Renegade</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] fought against the empire's attempts to spread across space, while [PAWN_pronoun] and [PAWN_possessive] band of rebels were not entirely successful, the war taught [PAWN_nameDef] many things.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>5</value></li>
+			<li><key>Melee</key><value>3</value></li>
+			<li><key>Medicine</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<ShootingAccuracy>-1</ShootingAccuracy>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_VenomSoldier</defName>
+		<title>Venom soldier</title>
+		<titleShort>Soldier</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was a mercenary soldier augmented with various toxin based augmentations. Intergalactic transport law required the removal of [PAWN_nameDef]'s augmentations, but their lingering effects have given [PAWN_nameDef] an increased immunity from constant exposure to bioweaponry.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+			<li>Pirate</li>
+			<li>ImperialFighter</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>3</value></li>
+			<li><key>Medicine</key><value>5</value></li>
+			<li><key>Intellectual</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Immunity>1</Immunity>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_CryptoLeader</defName>
+		<title>Crypto leader</title>
+		<titleShort>Leader</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was the leader of a powerful group that would utilize cryptosleep to see their complex plans to fruition. Unfortunately, unforeseen changes over the past hundred years or so have destroyed the organization [PAWN_nameDef] was once a part of.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>ImperialRoyal</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Social</key><value>5</value></li>
+			<li><key>Intellectual</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<GreatMemory>0</GreatMemory>
+		</forcedTraits>
+		<workDisables>
+			<li>ManualDumb</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_CryptoSoldier</defName>
+		<title>Empire rebel</title>
+		<titleShort>rebel</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was part of a group that would use cryptosleep to see the results of their often several hundred year plans. Unforeseen changes over the past century or so have destroyed the group [PAWN_nameDef] was once a part of, but has left [PAWN_objective] with various useful skills.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>ImperialFighter</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>5</value></li>
+			<li><key>Medicine</key><value>3</value></li>
+			<li><key>Intellectual</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<ShootingAccuracy>1</ShootingAccuracy>
+		</forcedTraits>
+		<workDisables>
+			<li>ManualDumb</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Undertroop</defName>
+		<title>Empire rebel</title>
+		<titleShort>rebel</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] lived underground on a planet bombarded with deadly radiation. [PAWN_nameDef] was a hired gun for a powerful underlord, until they were forced to escape as religious fanatics forced people to return to the surface claiming they were the rightful inheritors of the underground. [PAWN_pronoun] managed to repair an abandoned starship and escape the planet, but had to watch [PAWN_possessive] friends and family boil from being exposed to the solar radiation.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+			<li>ImperialFighter</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>3</value></li>
+			<li><key>Melee</key><value>3</value></li>
+			<li><key>Mining</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Undergrounder>0</Undergrounder>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Underlord</defName>
+		<title>Empire rebel</title>
+		<titleShort>rebel</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was the leader of an underworld city on a planet bombarded by solar radiation. A band of fanatics deposed [PAWN_objective] and forced the people of the planet to return to the surface to their deaths. [PAWN_nameDef] managed to hide within the complex caverns long enough for the empire to return to the planet and help them escape.</baseDesc>
+		<spawnCategories>
+			<li>ImperialRoyal</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Mining</key><value>3</value></li>
+			<li><key>Social</key><value>5</value></li>
+			<li><key>Intellectual</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Undergrounder>0</Undergrounder>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_DraftDodger</defName>
+		<title>Draft dodger</title>
+		<titleShort>rebel</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was going to be drafted into [PAWN_possessive] country's military. [PAWN_pronoun] managed to avoid the draft by disguising themselves as an elderly citizen while writing literature condemning the war. [PAWN_nameDef]'s work became immensely popular and even after the farce was revealed, [PAWN_pronoun] was referred to as "granny [PAWN_nameDef]".</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+			<li>ImperialCommon</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>-5</value></li>
+			<li><key>Melee</key><value>-5</value></li>
+			<li><key>Artistic</key><value>5</value></li>
+			<li><key>Social</key><value>3</value></li>
+			<li><key>Intellectual</key><value>3</value></li>
+		</skillGains>
+		<disallowedTraits>
+			<ShootingAccuracy>1</ShootingAccuracy>
+			<ShootingAccuracy>-1</ShootingAccuracy>
+			<Bloodlust>0</Bloodlust>
+			<Psychopath>0</Psychopath>
+		</disallowedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_VampireHunter</defName>
+		<title>Vampire hunter</title>
+		<titleShort>Hunter</titleShort>
+		<slot>Adulthood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was a skilled hunter of haemophages on [PAWN_possessive] homeworld. [PAWN_nameDef] was forced to kill some of [PAWN_possessive] friends and family who had embraced the curse. The experience left [PAWN_objective] with [PAWN_possessive] own lust for blood.</baseDesc>
+		<spawnCategories>
+			<li>MedievalCommon</li>
+			<li>ImperialFighter</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>4</value></li>
+			<li><key>Melee</key><value>4</value></li>
+			<li><key>Medicine</key><value>2</value></li>
+			<li><key>Intellectual</key><value>2</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Bloodlust>0</Bloodlust>
+		</forcedTraits>
+	</BackstoryDef>
+</Defs>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<BackstoryDef>
+		<defName>VB_Replicant</defName>
+		<title>Replicant</title>
+		<titleShort>Replicant</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was part of a line of androids that were designed to be indistinguishable from humans. Despite their ingenious design, their lack of significant advantages over regular humans lead to them being mostly discontinued. </baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>5</value></li>
+			<li><key>Crafting</key><value>3</value></li>
+			<li><key>Construction</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<FastLearner>0</FastLearner>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Childworker</defName>
+		<title>Child Worker</title>
+		<titleShort>Worker</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was made to work in an urbworld factory producing a part which [PAWN_nameDef] still doesn't know the purpose of.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Construction</key><value>3</value></li>
+			<li><key>Crafting</key><value>3</value></li>
+			<li><key>Intellectual</key><value>-5</value></li>
+			<li><key>Social</key><value>-5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Industriousness>1</Industriousness>
+			<NaturalMood>-1</NaturalMood>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Smart_Aleck</defName>
+		<title>Smart Aleck</title>
+		<titleShort>Smart</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was always at the top of [PAWN_possessive] class, but [PAWN_possessive] classmates found [PAWN_possessive] constant trivia to be annoying. </baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Intellectual</key><value>5</value></li>
+			<li><key>Social</key><value>-5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<TooSmart>0</TooSmart>
+		</forcedTraits>
+	</BackstoryDef>
+	
+	<BackstoryDef>
+		<defName>VB_Sacrifice</defName>
+		<title>Sacrifice</title>
+		<titleShort>Sacrifice</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was born to be ritually sacrificed and have [PAWN_possessive] flesh consumed by the congregation. A criminal investigator helped [PAWN_objective] to escape. [PAWN_nameDef] still remembers what [PAWN_pronoun] learned on the compound.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Animals</key><value>3</value></li>
+			<li><key>Plants</key><value>3</value></li>
+			<li><key>Medicine</key><value>3</value></li>
+		</skillGains>
+		<disallowedTraits>
+			<Cannibal>0</Cannibal>
+		</disallowedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Raisedbyapes</defName>
+		<title>Raised by Apes</title>
+		<titleShort>Apes</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Hulk</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was raised by apes who believed [PAWN_pronoun] was just a weird looking ape. [PAWN_nameDef] still isn't good at communicating with other humans.
+		</baseDesc>
+		<spawnCategories>
+			<li>Tribal</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Animals</key><value>5</value></li>
+			<li><key>Social</key><value>-3</value></li>
+		</skillGains>
+		<workDisables>
+			<li>ManualSkilled</li>
+		</workDisables>
+	</BackstoryDef>
+	
+	<BackstoryDef>
+		<defName>VB_Coalkid</defName>
+		<title>Coal Miner</title>
+		<titleShort>Coal Miner</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] had the job of being the "mole", fitting though tight spaces in the mine adults couldn't go. 
+		</baseDesc>
+		<spawnCategories>
+			<li>Outlander</li>
+			<li>Pirate</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Mining</key><value>5</value></li>
+			<li><key>Social</key><value>-3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Undergrounder>0</Undergrounder>
+		</forcedTraits>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Anklebiter</defName>
+		<title>Anklebiter</title>
+		<titleShort>Anklebiter</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was raised by violent raiders. Even as a child [PAWN_nameDef] would atleast try to bite the people [PAWN_possessive] gang was raiding.
+		</baseDesc>
+		<spawnCategories>
+			<li>Pirate</li>
+			<li>Sadist</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Melee</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Brawler>0</Brawler>
+		</forcedTraits>
+		<workDisables>
+			<li>Caring</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Junkkid</defName>
+		<title>Junk-Kid</title>
+		<titleShort>Junk-kid</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was forced to gather scrap for the local junk lord. [PAWN_pronoun] would sometimes make little mechanoid figures out of scrap and make them fight.
+		</baseDesc>
+		<spawnCategories>
+			<li>Outlander</li>
+			<li>Pirate</li>
+			<li>Sadist</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Crafting</key><value>4</value></li>
+			<li><key>Mining</key><value>4</value></li>
+		</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_PopularBully</defName>
+		<title>Popular bully</title>
+		<titleShort>Bully</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Hulk</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] was the schoolbully and would force other students to do [PAWN_possessive] homework. Despite [PAWN_nameDef]'s behavior, other students were eager to be around [PAWN_objective], especially the students that wanted to be just like [PAWN_nameDef].</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Melee</key><value>3</value></li>
+			<li><key>Social</key><value>3</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Abrasive>0</Abrasive>
+		</forcedTraits>
+		<workDisables>
+			<li>Caring</li>
+			<li>Intellectual</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_TheaterKid</defName>
+		<title>Theater Kid</title>
+		<titleShort>Theater Kid</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] never shy'd away from the melodramatic. [PAWN_nameDef] has starred in dozens of productions showcasing teenage angst, violence, and a face value view of romance.</baseDesc>
+		<spawnCategories>
+			<li>Offworld</li>
+			<li>Outlander</li>
+			<li>Pirate</li>
+			<li>Outsider</li>
+			<li>ImperialCommon</li>
+			<li>ImperialRoyal</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Artistic</key><value>5</value></li>
+			<li><key>Social</key><value>5</value></li>
+		</skillGains>
+		<forcedTraits>
+			<Abrasive>0</Abrasive>
+		</forcedTraits>
+		<workDisables>
+			<li>Caring</li>
+			<li>Intellectual</li>
+		</workDisables>
+	</BackstoryDef>
+
+	<BackstoryDef>
+		<defName>VB_Bandit</defName>
+		<title>Uneducated bandit</title>
+		<titleShort>Bandit</titleShort>
+		<slot>Childhood</slot>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<baseDesc>[PAWN_nameDef] didn't need none of that "booklernin". [PAWN_nameDef] learned everything [PAWN_pronoun] needed to know about, like making weapons, killing, and raiding, and [PAWN_nameDef]'s never seen a book that covers all of that. Although, that might also be because [PAWN_pronoun] can't read. </baseDesc>
+		<spawnCategories>
+			<li>Pirate</li>
+			<li>Sadist</li>
+			<li>Outsider</li>
+		</spawnCategories>
+		<skillGains>
+			<li><key>Shooting</key><value>4</value></li>
+			<li><key>Melee</key><value>4</value></li>
+			<li><key>Crafting</key><value>4</value></li>
+		</skillGains>
+		<forcedTraits>
+			<SlowLearner>0</SlowLearner>
+		</forcedTraits>
+		<disallowedTraits>
+			<TooSmart>0</TooSmart>
+			<FastLearner>0</FastLearner>
+		</disallowedTraits>
+		<workDisables>
+			<li>Caring</li>
+			<li>Intellectual</li>
+		</workDisables>
+	</BackstoryDef>
+</Defs>

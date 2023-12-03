@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- Blacksmith's apprentice -->
+    <BackstoryDef>
+        <defName>VFEMC001</defName>
+        <slot>Childhood</slot>
+        <title>Blacksmith's apprentice</title>
+        <titleShort>Apprentice</titleShort>
+        <baseDesc>[PAWN_nameDef] was born into a long bloodline of blacksmiths, and started picking up the trade from a young age. One night, [PAWN_possessive] village was invaded.\n\n[PAWN_nameDef] was lucky to escape with [PAWN_possessive] life, but the violence scarred [PAWN_objective] for life.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Crafting</key>
+                <value>4</value>
+            </li>
+        </skillGains>
+        <workDisables>
+            <li>Violent</li>
+        </workDisables>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Hunter's child -->
+    <BackstoryDef>
+        <defName>VFEMC002</defName>
+        <slot>Childhood</slot>
+        <title>Hunter's child</title>
+        <titleShort>Hunter</titleShort>
+        <titleShortFemale>Huntress</titleShortFemale>
+        <baseDesc>[PAWN_nameDef] was born into a somewhat poor family who relied on hunting to get by. [PAWN_possessive] parents taught [PAWN_objective] the basics of the trade: shooting, setting up traps and skinning animals - and that animals should only be used for sustenance.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Shooting</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Cooking</key>
+                <value>1</value>
+            </li>
+            <li>
+                <key>Crafting</key>
+                <value>1</value>
+            </li>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <workDisables>
+            <li>Animals</li>
+        </workDisables>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Medieval urchin -->
+    <BackstoryDef>
+        <defName>VFEMC003</defName>
+        <slot>Childhood</slot>
+        <title>Medieval urchin</title>
+        <titleShort>Urchin</titleShort>
+        <baseDesc>[PAWN_nameDef] ran away from a bad situation at home and became a street urchin, quickly getting a grasp of pickpocketing, lying and brawling.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Melee</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Social</key>
+                <value>1</value>
+            </li>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Monastery servant -->
+    <BackstoryDef>
+        <defName>VFEMC004</defName>
+        <slot>Childhood</slot>
+        <title>Monastery servant</title>
+        <titleShort>Servant</titleShort>
+        <baseDesc>Overwhelmed by grief after losing someone close, [PAWN_nameDef] didn’t quite know what to do and decided to join a monastery, where [PAWN_pronoun] spent [PAWN_possessive] early years learning to write books and create art for the monks to sell.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Artistic</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Intellectual</key>
+                <value>2</value>
+            </li>
+        </skillGains>
+        <workDisables>
+            <li>Violent</li>
+        </workDisables>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Warband recruit -->
+    <BackstoryDef>
+        <defName>VFEMC005</defName>
+        <slot>Childhood</slot>
+        <title>Warband recruit</title>
+        <titleShort>Recruit</titleShort>
+        <baseDesc>War ravaged [PAWN_nameDef]’s village, leaving [PAWN_objective] with nothing but the will to do the right thing and enlist in the local army. This was a great opportunity to learn the basic fighting skills needed to survive.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Melee</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Shooting</key>
+                <value>1</value>
+            </li>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Beggar -->
+    <BackstoryDef>
+        <defName>VFEMC006</defName>
+        <slot>Childhood</slot>
+        <title>Beggar</title>
+        <titleShort>Beggar</titleShort>
+        <baseDesc>[PAWN_nameDef] begged on the corners for a coin or a piece of bread from as early as [PAWN_pronoun] can remember, observing, listening and talking with countless travelers.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Social</key>
+                <value>1</value>
+            </li>
+            <li>
+                <key>Intellectual</key>
+                <value>1</value>
+            </li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Quarry child -->
+    <BackstoryDef>
+        <defName>VFEMC007</defName>
+        <slot>Childhood</slot>
+        <title>Quarry child</title>
+        <titleShort>Miner</titleShort>
+        <baseDesc>For [PAWN_possessive] father's crimes, [PAWN_nameDef] was sent to work in a quarry, breaking rocks every day of [PAWN_possessive] childhood.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Mining</key>
+                <value>2</value>
+            </li>
+            <li>
+                <key>Construction</key>
+                <value>1</value>
+            </li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <!-- Collier -->
+    <BackstoryDef>
+        <defName>VFEMC008</defName>
+        <slot>Childhood</slot>
+        <title>Collier</title>
+        <titleShort>Collier</titleShort>
+        <baseDesc>[PAWN_nameDef] was born to a family of destitute colliers bound in perpetual debt-slavery. Their lives consisted of toil and misery in the mines.</baseDesc>
+        <skillGains>
+            <li>
+                <key>Mining</key>
+                <value>3</value>
+            </li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBC038</defName>
+        <slot>Childhood</slot>
+        <title>Feudal farm kid</title>
+        <titleShort>Farm kid</titleShort>
+        <baseDesc>[PAWN_nameDef] was the child of a medieval farmer, and was expected to follow in [PAWN_possessive] father's footsteps.</baseDesc>
+        <workDisables>
+            <li>Intellectual</li>
+        </workDisables>
+        <skillGains>
+            <li><key>Animals</key><value>3</value></li>
+            <li><key>Plants</key><value>4</value></li>
+        </skillGains>
+        <requiredWorkTags>
+            <li>ManualDumb</li>
+        </requiredWorkTags>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBC040</defName>
+        <slot>Childhood</slot>
+        <title>Medieval peasant</title>
+        <titleShort>Peasant</titleShort>
+        <baseDesc>[PAWN_nameDef] grew up pulling carts and digging holes on a medieval world. Simple manual labor is [PAWN_possessive] oldest companion, along with the master's lash. [PAWN_pronoun] didn't learn to read until age nine.</baseDesc>
+        <skillGains>
+            <li><key>Plants</key><value>2</value></li>
+            <li><key>Construction</key><value>2</value></li>
+            <li><key>Mining</key><value>2</value></li>
+        </skillGains>
+        <requiredWorkTags>
+            <li>ManualDumb</li>
+        </requiredWorkTags>
+        <workDisables>
+            <li>Intellectual</li>
+        </workDisables>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBC041</defName>
+        <slot>Childhood</slot>
+        <title>Medieval thief</title>
+        <titleShort>Thief</titleShort>
+        <baseDesc>[PAWN_nameDef] grew up poor and hungry on a medieval planet, learning to fend for [PAWN_objective]self. At first, [PAWN_pronoun] only took what [PAWN_pronoun] needed, but later, [PAWN_pronoun] learned to take what [PAWN_pronoun] wanted.</baseDesc>
+        <skillGains>
+            <li><key>Melee</key><value>4</value></li>
+            <li><key>Social</key><value>-2</value></li>
+            <li><key>Crafting</key><value>2</value></li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBC116</defName>
+        <slot>Childhood</slot>
+        <title>Medieval plower</title>
+        <titleShort>Plower</titleShort>
+        <baseDesc>[PAWN_nameDef] lived on a planet where kings and queens ruled with little regard for the peasants beneath them. [PAWN_possessive] family owned a large farm, but the king took most of the food it produced, leaving [PAWN_nameDef]'s family poor and unable to pay for [PAWN_possessive] education.</baseDesc>
+        <skillGains>
+            <li><key>Construction</key><value>2</value></li>
+            <li><key>Plants</key><value>5</value></li>
+            <li><key>Intellectual</key><value>-1</value></li>
+            <li><key>Artistic</key><value>-2</value></li>
+        </skillGains>
+        <requiredWorkTags>
+            <li>ManualDumb</li>
+        </requiredWorkTags>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBC117</defName>
+        <slot>Childhood</slot>
+        <title>Medieval slave</title>
+        <titleShort>Slave</titleShort>
+        <baseDesc>Born into slavery on a feudal world, [PAWN_nameDef] never knew [PAWN_possessive] parents, but only endless toil.</baseDesc>
+        <workDisables>
+            <li>Intellectual</li>
+        </workDisables>
+        <requiredWorkTags>
+            <li>ManualDumb</li>
+        </requiredWorkTags>
+        <skillGains>
+            <li><key>Construction</key><value>2</value></li>
+            <li><key>Plants</key><value>3</value></li>
+            <li><key>Mining</key><value>1</value></li>
+            <li><key>Cooking</key><value>2</value></li>
+            <li><key>Artistic</key><value>-2</value></li>
+        </skillGains>
+        <spawnCategories>
+            <li>Slave</li>
+            <li>Medieval</li>
+            <li>Uncommon</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBC118</defName>
+        <slot>Childhood</slot>
+        <title>Medieval squire</title>
+        <titleShort>Squire</titleShort>
+        <baseDesc>Born to a noble family on a medieval world, [PAWN_nameDef] became a squire. [PAWN_possessive] training included falconry, fencing, and wrestling, often done wearing armor.</baseDesc>
+        <skillGains>
+            <li><key>Animals</key><value>2</value></li>
+            <li><key>Crafting</key><value>2</value></li>
+            <li><key>Melee</key><value>4</value></li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBC119</defName>
+        <slot>Childhood</slot>
+        <title>Medieval witch</title>
+        <titleShort>Witch</titleShort>
+        <baseDesc>[PAWN_nameDef] became interested in alchemy when [PAWN_pronoun] was a young child. [PAWN_pronoun] was taken in and taught basic herbalism, medicine and chemistry by an elderly recluse who claimed to have come from the stars. However, church leaders deemed their work witchcraft, sentenced [PAWN_nameDef]'s mentor to imprisonment, and sent [PAWN_nameDef] to an orphanage until [PAWN_pronoun] came of age.</baseDesc>
+        <workDisables>
+            <li>Social</li>
+        </workDisables>
+        <skillGains>
+            <li><key>Cooking</key><value>1</value></li>
+            <li><key>Plants</key><value>2</value></li>
+            <li><key>Medicine</key><value>3</value></li>
+            <li><key>Intellectual</key><value>2</value></li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+    
+    <BackstoryDef>
+        <defName>REBC120</defName>
+        <slot>Childhood</slot>
+        <title>Stablehand</title>
+        <titleShort>Stablehand</titleShort>
+        <baseDesc>[PAWN_nameDef] was a stablehand on a medieval planet, mucking dung every day to earn [PAWN_possessive] keep.</baseDesc>
+        <workDisables>
+            <li>Social</li>
+        </workDisables>
+        <requiredWorkTags>
+            <li>ManualDumb</li>
+        </requiredWorkTags>
+        <skillGains>
+            <li><key>Animals</key><value>3</value></li>
+            <li><key>Melee</key><value>2</value></li>
+            <li><key>Artistic</key><value>1</value></li>
+            <li><key>Crafting</key><value>2</value></li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>REBC121</defName>
+        <slot>Childhood</slot>
+        <title>Trainee alchemist</title>
+        <titleShort>Alchemist</titleShort>
+        <baseDesc>[PAWN_nameDef] grew up on a medieval world. [PAWN_pronoun] learned the basics of alchemy and medicine in one the few monastic schools on [PAWN_possessive] planet.</baseDesc>
+        <skillGains>
+            <li><key>Intellectual</key><value>2</value></li>
+            <li><key>Cooking</key><value>2</value></li>
+            <li><key>Medicine</key><value>3</value></li>
+        </skillGains>
+        <spawnCategories>
+            <li>Medieval</li>
+        </spawnCategories>
+    </BackstoryDef>
+
+</Defs>
