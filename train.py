@@ -79,10 +79,8 @@ def test_loss_plateau(epoch, loss_ot):
 def adjust_learning_rate(lr):
     return lr/5
 
-
 def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_save="models/ft1",
           data_file_path="raw_data/backstory_large.pkl", test_size=0.1, random_state=42, batch_size=8, optimizer_name=AdamW):
-    """
     Trains a model and saves the model and loss records
     :param max_epochs: the maximum number of epochs the trainer is allowed to run, if early stopping condition is never met
     :param learning_rate: the learning rate
@@ -95,21 +93,29 @@ def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_
     :param optimizer_name: the optimizer used to optimize the model
     :return none
     """
-
-    # Add special tokens
-    token_name = "[PAWN_nameDef]"
-    token_possessive = "[PAWN_possessive]"
-    token_pronoun = "[PAWN_pronoun]"
-
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("using device " + str(device))
 
     tokenizer = AutoTokenizer.from_pretrained(model_name_load)
+    # Add special tokens
+    token_name = "Ġ[PAWN_nameDef]"
+    token_possessive = "Ġ[PAWN_possessive]"
+    token_pronoun = "Ġ[PAWN_pronoun]"
+
+
+
     # TODO attention mask and the pad token id
     # The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
     # Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
     model = AutoModelForCausalLM.from_pretrained(model_name_load).to(device)
 
+    """does not quite work yet
+    tokenizer.add_tokens(token_name)
+    tokenizer.add_tokens(token_possessive)
+    tokenizer.add_tokens(token_pronoun)
+    model.resize_token_embeddings(len(tokenizer))
+    """
+    
     # data_file_path="backstory.pkl"
     df = pd.read_pickle(data_file_path)
     attributes = df["Attribute"]
@@ -211,6 +217,7 @@ def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_
         loss_ot_test[epoch] = total_loss_test
 
         if test_loss_plateau(epoch, loss_ot_test):
+
             new_lr = adjust_learning_rate(learning_rate)
             optimizer = optimizer_name(model.parameters(), lr=new_lr)
 

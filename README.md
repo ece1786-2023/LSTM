@@ -31,4 +31,8 @@ branch naming: NMMDD_HHMM_name
 
 N=name {b=backup c=colin t=tianze}
 
+# Model Path
+All the model path can be found at:
+https://drive.google.com/drive/folders/1Q4lNVWl6gutG3tmtFqS81jByPCLGrxoE?usp=sharing
+
 # repo structure
