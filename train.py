@@ -81,7 +81,8 @@ def adjust_learning_rate(lr):
 
 def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_save="models/ft1",
           data_file_path="raw_data/backstory_large.pkl", test_size=0.1, random_state=42, batch_size=8, optimizer_name=AdamW):
-    Trains a model and saves the model and loss records
+    
+    """Trains a model and saves the model and loss records
     :param max_epochs: the maximum number of epochs the trainer is allowed to run, if early stopping condition is never met
     :param learning_rate: the learning rate
     :param model_name_load: a huggingface model or the path of a previously saved model
