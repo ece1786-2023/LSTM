@@ -9,6 +9,7 @@
 **************************************************
 '''
 from transformers import AutoTokenizer, AutoModelForCausalLM, AdamW
+from torch.optim import SGD, ASGD, Rprop, Adagrad
 import torch
 from torch.utils.data import Dataset, DataLoader
 import numpy as np
@@ -66,22 +67,25 @@ def test_loss_plateau(epoch, loss_ot):
     if epoch < 5:
         return False
     else:
-        # count = 0
-        # for i in range(5):
-        #     count += int(loss_ot[epoch - i] > loss_ot[epoch - i - 1])
-        # if count >= 3:
-        #     print("Reached plateau in epoch", epoch + 1)
-        if loss_ot[epoch] > loss_ot[epoch - 1] and loss_ot[epoch - 1] > loss_ot[epoch - 2]:
+        count = 0
+        for i in range(5):
+            count += int(loss_ot[epoch - i] > loss_ot[epoch - i - 1])
+        if count >= 3:
+            print("Reached plateau in epoch", epoch + 1)
+
+            # if loss_ot[epoch] > loss_ot[epoch - 1] and loss_ot[epoch - 1] > loss_ot[epoch - 2]:
             return True
         else:
             return False
 
+
 def adjust_learning_rate(lr):
-    return lr/5
+    return lr / 5
 
 
 def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_save="models/ft1",
-          data_file_path="raw_data/backstory_large.pkl", test_size=0.1, random_state=42, batch_size=8, optimizer_name=AdamW):
+          data_file_path="raw_data/backstory_large.pkl", test_size=0.1, random_state=42, batch_size=8,
+          optimizer_name=AdamW):
     """
     Trains a model and saves the model and loss records
     :param max_epochs: the maximum number of epochs the trainer is allowed to run, if early stopping condition is never met
@@ -200,19 +204,21 @@ def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_
             best_loss = total_loss_test
 
             # save model and tokenizer
-            model.save_pretrained(model_name_save)
-            tokenizer.save_pretrained(model_name_save)
+            # model.save_pretrained(model_name_save)
+            # tokenizer.save_pretrained(model_name_save)
             print('Save best model')
 
         print(f"Epoch {epoch}: Test loss={total_loss_test} learning_rate={opt_lr}")
 
         # record loss of the epoch
-        loss_ot_train[epoch] = total_loss_train / dataloader_train_len
-        loss_ot_test[epoch] = total_loss_test
 
         if test_loss_plateau(epoch, loss_ot_test):
-            new_lr = adjust_learning_rate(learning_rate)
-            optimizer = optimizer_name(model.parameters(), lr=new_lr)
+            # new_lr = adjust_learning_rate(learning_rate)
+            # optimizer = optimizer_name(model.parameters(), lr=new_lr)
+            break
+
+        loss_ot_train[epoch] = total_loss_train / dataloader_train_len
+        loss_ot_test[epoch] = total_loss_test
 
     # save loss records
     train_save_path = "loss_record/lr_" + str(learning_rate) + "_bs_" + str(
@@ -224,4 +230,9 @@ def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_
 
 
 if __name__ == '__main__':
-    train(max_epochs=30, learning_rate=1e-5, model_name_load="gpt2", data_file_path="raw_data/backstory_large.pkl")
+    train(max_epochs=30,
+          learning_rate=5e-6,
+          model_name_load="gpt2",
+          data_file_path="raw_data/backstory_large.pkl",
+          batch_size=16,
+          optimizer_name=AdamW)
