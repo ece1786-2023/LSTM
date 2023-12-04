@@ -24,6 +24,7 @@ class RimWordDS(Dataset):
     :param tokenizer: a tokenizer to tokenize the sentences
     :param max_length: the max length of each tokenized sentence
     """
+
     def __init__(self, sentences, tokenizer, max_length=128):
         self.sentences = sentences
         self.tokenizer = tokenizer
@@ -65,15 +66,22 @@ def test_loss_plateau(epoch, loss_ot):
     if epoch < 5:
         return False
     else:
-        count=0
-        for i in range(5):
-            count += int(loss_ot[epoch - i] > loss_ot[epoch - i - 1])
-        if count>=3:
-            print("Reached plateau in epoch",epoch+1)
+        # count = 0
+        # for i in range(5):
+        #     count += int(loss_ot[epoch - i] > loss_ot[epoch - i - 1])
+        # if count >= 3:
+        #     print("Reached plateau in epoch", epoch + 1)
+        if loss_ot[epoch] > loss_ot[epoch - 1] and loss_ot[epoch - 1] > loss_ot[epoch - 2]:
             return True
-        else: return False
+        else:
+            return False
 
-def train(max_epochs=30,learning_rate=5e-6,model_name_load="gpt2",model_name_save="models/ft1",data_file_path="raw_data/backstory.pkl",test_size=0.1,random_state=42,batch_size=8,optimizer_name=AdamW):
+def adjust_learning_rate(lr):
+    return lr/5
+
+
+def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_save="models/ft1",
+          data_file_path="raw_data/backstory_large.pkl", test_size=0.1, random_state=42, batch_size=8, optimizer_name=AdamW):
     """
     Trains a model and saves the model and loss records
     :param max_epochs: the maximum number of epochs the trainer is allowed to run, if early stopping condition is never met
@@ -104,7 +112,7 @@ def train(max_epochs=30,learning_rate=5e-6,model_name_load="gpt2",model_name_sav
 
     # data_file_path="backstory.pkl"
     df = pd.read_pickle(data_file_path)
-    attributes=df["Attribute"]
+    attributes = df["Attribute"]
     titles = df["Title"]
     sentences = df["Desc"]
     sentences = sentences.tolist()
@@ -113,16 +121,17 @@ def train(max_epochs=30,learning_rate=5e-6,model_name_load="gpt2",model_name_sav
     # generating sentences (training instances)
     for i in range(len_data):
         # print(i,type(sentences[i]),str(sentences[i]))
-        skill_modifiers_str=attributes[i].lower().replace("\t", ", ").replace("-", " -").replace("+", " +").strip(", ")
-        sentences[i] = "This is the story of [PAWN_nameDef], a " + titles[i] + " with "+skill_modifiers_str+": " + sentences[i]
-        #print(sentences[i])
+        skill_modifiers_str = attributes[i].lower().replace("\t", ", ").replace("-", " -").replace("+", " +").strip(
+            ", ")
+        sentences[i] = "This is the story of [PAWN_nameDef], a " + titles[i] + " with " + skill_modifiers_str + ": " + \
+                       sentences[i]
+        # print(sentences[i])
 
     # convert backstory into proper prompt
 
-
     sentences_train, sentences_test = train_test_split(sentences, test_size=test_size, random_state=random_state)
     # using a small dataset for development purposes
-    #sentences_train, sentences_test = train_test_split(sentences_test, test_size=0.1, random_state=42)
+    # sentences_train, sentences_test = train_test_split(sentences_test, test_size=0.1, random_state=42)
 
     # Create a custom dataset
     dataset_train = RimWordDS(sentences_train, tokenizer)
@@ -133,8 +142,10 @@ def train(max_epochs=30,learning_rate=5e-6,model_name_load="gpt2",model_name_sav
     # Set up DataLoader
     # dataloader_train = DataLoader(dataset_train, batch_size=1, shuffle=True)
     # dataloader_test = DataLoader(dataset_test, batch_size=1, shuffle=True)
-    dataloader_train = DataLoader(dataset_train, batch_size=batch_size, shuffle=True, collate_fn=lambda batch: lm_collate_fn(batch, device))
-    dataloader_test = DataLoader(dataset_test, batch_size=batch_size, shuffle=True, collate_fn=lambda batch: lm_collate_fn(batch, device))
+    dataloader_train = DataLoader(dataset_train, batch_size=batch_size, shuffle=True,
+                                  collate_fn=lambda batch: lm_collate_fn(batch, device))
+    dataloader_test = DataLoader(dataset_test, batch_size=batch_size, shuffle=True,
+                                 collate_fn=lambda batch: lm_collate_fn(batch, device))
     dataloader_train_len = len(dataloader_train)
     dataloader_test_len = len(dataloader_test)
 
@@ -144,6 +155,7 @@ def train(max_epochs=30,learning_rate=5e-6,model_name_load="gpt2",model_name_sav
 
     loss_ot_train = np.zeros(max_epochs)
     loss_ot_test = np.zeros(max_epochs)
+    best_loss = float('inf')
 
     # Fine-tune loop
     model.train()
@@ -182,23 +194,34 @@ def train(max_epochs=30,learning_rate=5e-6,model_name_load="gpt2",model_name_sav
 
             total_loss_test += loss.item()
         total_loss_test /= dataloader_test_len
-        print(f"Epoch {epoch}: Test loss={total_loss_test}")
+        opt_lr = optimizer.param_groups[0]['lr']
+
+        if total_loss_test < best_loss:
+            best_loss = total_loss_test
+
+            # save model and tokenizer
+            model.save_pretrained(model_name_save)
+            tokenizer.save_pretrained(model_name_save)
+            print('Save best model')
+
+        print(f"Epoch {epoch}: Test loss={total_loss_test} learning_rate={opt_lr}")
 
         # record loss of the epoch
         loss_ot_train[epoch] = total_loss_train / dataloader_train_len
         loss_ot_test[epoch] = total_loss_test
 
         if test_loss_plateau(epoch, loss_ot_test):
-            break
+            new_lr = adjust_learning_rate(learning_rate)
+            optimizer = optimizer_name(model.parameters(), lr=new_lr)
 
-    #save loss records
-    train_save_path="loss_record/lr_"+str(learning_rate)+"_bs_"+str(batch_size)+"_"+optimizer_name.__name__+"_train"
-    test_save_path = "loss_record/lr_"+str(learning_rate)+"_bs_"+str(batch_size)+"_"+optimizer_name.__name__+"_test"
+    # save loss records
+    train_save_path = "loss_record/lr_" + str(learning_rate) + "_bs_" + str(
+        batch_size) + "_" + optimizer_name.__name__ + "_train"
+    test_save_path = "loss_record/lr_" + str(learning_rate) + "_bs_" + str(
+        batch_size) + "_" + optimizer_name.__name__ + "_test"
     np.save(train_save_path, loss_ot_train)
     np.save(test_save_path, loss_ot_test)
 
-    #save model and tokenizer
-    model.save_pretrained(model_name_save)
-    tokenizer.save_pretrained(model_name_save)
 
-train(max_epochs=30,learning_rate=5e-6,model_name_load="gpt2")
+if __name__ == '__main__':
+    train(max_epochs=30, learning_rate=1e-5, model_name_load="gpt2", data_file_path="raw_data/backstory_large.pkl")

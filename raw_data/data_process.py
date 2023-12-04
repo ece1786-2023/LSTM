@@ -88,7 +88,7 @@ if __name__ == '__main__':
             # print(file_name)
             xml_path = 'story/' + fd_name + '/' + file_name
             read_xml(xml_path, data, story_head)
-        print(len(data))
+            print(len(data))
     df = pd.DataFrame(data)
     df.columns = csv_head
     ########### Save as cpkl ##################
