@@ -41,8 +41,12 @@ def read_xml(xml_path, data, story_head):
                     continue
                 if backstory.getElementsByTagName('baseDesc'):
                     desc = backstory.getElementsByTagName('baseDesc')[0].childNodes[0].data
+                    desc = desc.replace("{PAWN_gender ? he : she}", "[PAWN_pronoun]").replace("{PAWN_gender ? his : her}", "[PAWN_possessive]").replace("{PAWN_gender ? him : her}", "[PAWN_objective]")
+                    desc = desc.replace("{PAWN_gender ? He : She}", "[PAWN_pronoun]").replace("{PAWN_gender ? His : Her}", "[PAWN_possessive]").replace("{PAWN_gender ? Him : Her}", "[PAWN_objective]")
                 elif backstory.getElementsByTagName('baseDescription'):
                     desc = backstory.getElementsByTagName('baseDescription')[0].childNodes[0].data
+                    desc = desc.replace("{PAWN_gender ? he : she}", "[PAWN_pronoun]").replace("{PAWN_gender ? his : her}", "[PAWN_possessive]").replace("{PAWN_gender ? him : her}", "[PAWN_objective]")
+                    desc = desc.replace("{PAWN_gender ? He : She}", "[PAWN_pronoun]").replace("{PAWN_gender ? His : Her}", "[PAWN_possessive]").replace("{PAWN_gender ? Him : Her}", "[PAWN_objective]")
                 else:
                     continue
                 if backstory.getElementsByTagName('skillGains'):

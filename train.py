@@ -59,11 +59,10 @@ def lm_collate_fn(batch, device):
 
 def test_loss_plateau(epoch, loss_ot):
     """
-    Retruns True if there has been 2 epochs where test loss increases after the last 4 epochs
+    Retruns True if there has been 3 epochs where test loss increases after the last 5 epochs
     :param epoch: the number of finished training epochs-1
     :param loss_ot: array containing test loss overtime
     """
-    # todo tune the plateau parameters 4 and 2
     if epoch < 5:
         return False
     else:
@@ -109,7 +108,6 @@ def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_
     print("using device " + str(device))
 
     tokenizer = AutoTokenizer.from_pretrained(model_name_load)
-    # TODO attention mask and the pad token id
     # The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
     # Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
     model = AutoModelForCausalLM.from_pretrained(model_name_load).to(device)
@@ -125,13 +123,10 @@ def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_
     # generating sentences (training instances)
     for i in range(len_data):
         # print(i,type(sentences[i]),str(sentences[i]))
-        skill_modifiers_str = attributes[i].lower().replace("\t", ", ").replace("-", " -").replace("+", " +").strip(
-            ", ")
+        skill_modifiers_str = attributes[i].lower().replace("\t", ", ").strip(", ")
         sentences[i] = "This is the story of [PAWN_nameDef], a " + titles[i] + " with " + skill_modifiers_str + ": " + \
                        sentences[i]
         # print(sentences[i])
-
-    # convert backstory into proper prompt
 
     sentences_train, sentences_test = train_test_split(sentences, test_size=test_size, random_state=random_state)
     # using a small dataset for development purposes
@@ -140,8 +135,6 @@ def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_
     # Create a custom dataset
     dataset_train = RimWordDS(sentences_train, tokenizer)
     dataset_test = RimWordDS(sentences_test, tokenizer)
-
-    # TODO cross validation?
 
     # Set up DataLoader
     # dataloader_train = DataLoader(dataset_train, batch_size=1, shuffle=True)
@@ -155,7 +148,6 @@ def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_
 
     # Set up optimizer
     optimizer = optimizer_name(model.parameters(), lr=learning_rate)
-    # TODO optimizer selection
 
     loss_ot_train = np.zeros(max_epochs)
     loss_ot_test = np.zeros(max_epochs)
@@ -204,8 +196,8 @@ def train(max_epochs=30, learning_rate=5e-5, model_name_load="gpt2", model_name_
             best_loss = total_loss_test
 
             # save model and tokenizer
-            # model.save_pretrained(model_name_save)
-            # tokenizer.save_pretrained(model_name_save)
+            model.save_pretrained(model_name_save)
+            tokenizer.save_pretrained(model_name_save)
             print('Save best model')
 
         print(f"Epoch {epoch}: Test loss={total_loss_test} learning_rate={opt_lr}")
