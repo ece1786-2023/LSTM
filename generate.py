@@ -26,8 +26,7 @@ def generate(model_path, titles, attributes):
     num_output = 10  # number of output desired
     ids_ls = []
     for i in range(num_output):
-        skill_modifiers_str = attributes[i].lower().replace("\t", ", ").replace("-", " -").replace("+", " +").strip(
-            ", ")
+        skill_modifiers_str = attributes[i].lower().replace("\t", ", ").strip(", ")
         prompt = "This is the story of [PAWN_nameDef], a " + titles[i] + " with " + skill_modifiers_str + ": "
         input_ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
         ids_ls.append(input_ids)
@@ -39,9 +38,8 @@ def generate(model_path, titles, attributes):
     sentence_out = []
     total_loss_test = 0
     for i in range(num_output):
-        outputs = model.generate(ids_ls[i], do_sample=True, max_length=180, temperature=1, top_p=0.3,
+        outputs = model.generate(ids_ls[i], do_sample=True, max_length=200, temperature=1, top_p=1,
                                  repetition_penalty=1)
-        # TODO output length
         list_out.append(outputs)
     loss = total_loss_test / 50
 
