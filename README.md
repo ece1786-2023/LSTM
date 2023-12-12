@@ -1,38 +1,19 @@
 # LSTM
 
-# git commands
-git init	#initialize
-
-#git clone https://github.com/ece1786-2023/LSTM
-
-git fetch origin #This command fetches the latest main branch from the repo
-
-git reset --hard origin/main #This command will set your local branch to exactly match the state of the **fetched** remote branch. **Be cautious when using --hard as it discards all local changes.**
-
-git pull origin main #pulls new commits from github
-
-git status	#check new/modified/untracked files
-
-git add <file1> <file2> #**manually add all the files that were changed for each commit** 
-
-git commit -m "msg" #**check red items in status before commit**
-
-git remote add origin https://github.com/ece1786-2023/LSTM
-
-git branch	#check your current branch
-
-git branch -M branchname #creates new branch
-
-git push -u origin branchname #push to new branch. **do not push to main!!!** create pull request and merge after pushing to new branch
-
-
-# version control 
-branch naming: NMMDD_HHMM_name
-
-N=name {b=backup c=colin t=tianze}
-
 # Model Path
-All the model path can be found at:
+The model files can be found at:
 https://drive.google.com/drive/folders/1Q4lNVWl6gutG3tmtFqS81jByPCLGrxoE?usp=sharing
+save it in the models/ folder to use the model
+e.g. project_directory/models/ft3/pytorch_model.bin
 
-# repo structure
+# Repo Structure
+figure contains the loss overtime graphs
+loss_record contains the losses overtime in training
+models contains the fine-tuned model, it's contents can be ignored because it's too large and can't be uploaded
+raw_data contains the raw data files and the data processing script data_process.py, and the extracted dataset backstory_large.pkl
+
+demo.py is the script for the gradio UI
+generate.py is a script for generating descriptions for development purposes
+generate_skill_test.py is also a script for generating descriptions for development purposes
+plot_loss_bs.py, plot_loss_lr.py, plot_loss_opt.py are plotting scripts
+train.py is the script to finr-tune the GPT-2 small model
